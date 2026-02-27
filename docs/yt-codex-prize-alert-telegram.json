@@ -8,27 +8,68 @@
   "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-02-27T17:05:33Z",
-  "duration_seconds": 0.0,
-  "duration_human": "0s",
-  "freshness_lag_seconds": 946.702784,
-  "freshness_lag_human": "15m 46s",
-  "max_date": null,
-  "schema_hash": null,
-  "row_counts": {},
-  "key_checks": [],
-  "warnings": [
-    "workload outcome: success"
+  "last_run_time": "2026-02-27T17:44:12Z",
+  "duration_seconds": 1.0,
+  "duration_human": "1s",
+  "freshness_lag_seconds": 0.0,
+  "freshness_lag_human": "0s",
+  "max_date": "2026-03-02T10:30:00Z",
+  "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
+  "row_counts": {
+    "symbols_monitored": 1,
+    "prices_fetched": 1,
+    "alerts_generated": 0,
+    "alerts_sent": 0,
+    "alerts_failed": 0
+  },
+  "key_checks": [
+    {
+      "name": "config_valid",
+      "status": "OK",
+      "detail": "Config loaded and validated from config.yaml.",
+      "metric": 1.0
+    },
+    {
+      "name": "price_fetch_success_rate",
+      "status": "OK",
+      "detail": "Fetched market price data for 1/1 monitored symbol.",
+      "metric": 1.0
+    },
+    {
+      "name": "freshness_within_threshold",
+      "status": "OK",
+      "detail": "Freshness lag 0.0s is within threshold 259200.0s.",
+      "metric": 0.0
+    },
+    {
+      "name": "rules_evaluated",
+      "status": "OK",
+      "detail": "Signal evaluation completed for threshold rule.",
+      "metric": 1.0
+    },
+    {
+      "name": "telegram_send_success_rate",
+      "status": "OK",
+      "detail": "No alert generated; Telegram send not required.",
+      "metric": 1.0
+    },
+    {
+      "name": "state_persisted",
+      "status": "OK",
+      "detail": "No state write required because signal did not trigger.",
+      "metric": 1.0
+    }
   ],
-  "top_warning": "workload outcome: success",
+  "warnings": [],
+  "top_warning": "None",
   "artifact_links": [
     {
       "label": "workflow_run",
-      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22495879087"
+      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22497202387"
     }
   ],
   "baseline_duration_seconds": null,
   "detail_page": "yt-codex-prize-alert-telegram.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
-  "generated_at": "2026-02-27T17:21:19Z"
+  "generated_at": "2026-02-27T17:45:02Z"
 }
