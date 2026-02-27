@@ -9,7 +9,7 @@
   },
   "repos": [
     {
-      "repo": "https://github.com/yt-codex/prize-alert-telegram.git"
+      "repo": "yt-codex/prize-alert-telegram"
     },
     {
       "repo": "your-org/your-repo-b"
