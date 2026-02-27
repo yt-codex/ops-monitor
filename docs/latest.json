@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-02-27T18:19:26Z",
-  "dashboard_base_url": null,
-  "dashboard_url": null,
+  "generated_at": "2026-02-27T18:27:30Z",
+  "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
+  "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
   "repo_count": 1,
   "counts": {
     "OK": 1,
@@ -89,9 +89,9 @@
       },
       "baseline_duration_seconds": 1.0,
       "detail_page": "yt-codex-prize-alert-telegram.html",
-      "detail_url": null,
-      "dashboard_home_url": "../",
-      "generated_at": "2026-02-27T18:19:26Z"
+      "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
+      "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
+      "generated_at": "2026-02-27T18:27:30Z"
     }
   ]
 }

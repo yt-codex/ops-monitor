@@ -860,8 +860,10 @@ def main() -> int:
     write_json(output_path, summary)
     write_json(docs_dir / "latest.json", summary)
 
-    (docs_dir / "index.html").write_text(render_index(summary), encoding="utf-8")
     (docs_dir / ".nojekyll").write_text("", encoding="utf-8")
+    docs_index_path = docs_dir / "index.html"
+    if docs_index_path.exists():
+        docs_index_path.unlink()
     for detail in details:
         (docs_dir / f"{detail['slug']}.html").write_text(
             render_detail(detail),
@@ -869,7 +871,7 @@ def main() -> int:
         )
         write_json(docs_dir / f"{detail['slug']}.json", detail)
 
-    print(f"Generated dashboard for {len(details)} repos at {docs_dir / 'index.html'}")
+    print(f"Generated dashboard for {len(details)} repos in {docs_dir}")
     return 0
 
 
