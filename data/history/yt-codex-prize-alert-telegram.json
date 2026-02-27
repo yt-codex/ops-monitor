@@ -8,5 +8,15 @@
     "freshness_lag_seconds": 1421.731661,
     "schema_hash": null,
     "top_warning": "workload outcome: success"
+  },
+  {
+    "captured_at": "2026-02-27T17:12:11Z",
+    "last_run_time": "2026-02-27T17:05:33Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 0.0,
+    "freshness_lag_seconds": 398.107681,
+    "schema_hash": null,
+    "top_warning": "workload outcome: success"
   }
 ]
