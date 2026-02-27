@@ -99,8 +99,11 @@ def slugify_repo(repo: str) -> str:
 def format_seconds(seconds: float | None) -> str:
     if seconds is None:
         return "n/a"
-    seconds = max(0, int(seconds))
-    days, rem = divmod(seconds, 86_400)
+    value = max(0.0, float(seconds))
+    if 0 < value < 1:
+        return "<1s"
+    whole = int(value)
+    days, rem = divmod(whole, 86_400)
     hours, rem = divmod(rem, 3_600)
     minutes, sec = divmod(rem, 60)
     if days:
@@ -389,6 +392,11 @@ def html_template(title: str, body: str) -> str:
       border-radius: 4px;
       padding: 1px 4px;
       font-size: 0.9em;
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-all;
+      white-space: normal;
     }}
     .meta-grid {{
       display: grid;
@@ -401,6 +409,7 @@ def html_template(title: str, body: str) -> str:
       border: 1px solid var(--line);
       border-radius: 10px;
       padding: 10px 12px;
+      overflow-wrap: anywhere;
     }}
     .meta-title {{
       font-size: 0.76rem;
@@ -408,6 +417,10 @@ def html_template(title: str, body: str) -> str:
       letter-spacing: 0.04em;
       color: var(--muted);
       margin-bottom: 4px;
+    }}
+    .help {{
+      cursor: help;
+      border-bottom: 1px dotted #94a3b8;
     }}
     a {{
       color: #0f766e;
@@ -441,31 +454,14 @@ def html_template(title: str, body: str) -> str:
 
 
 def render_index(summary: dict[str, Any]) -> str:
-    rows = []
-    for repo in summary["repos"]:
-        detail_href = f"{repo['slug']}.html"
-        rows.append(
-            "<tr>"
-            f"<td><a href=\"{escape(detail_href)}\">{escape(repo['full_name'])}</a></td>"
-            f"<td><span class=\"badge {escape(repo['severity'])}\">{escape(repo['severity'])}</span></td>"
-            f"<td>{escape(format_timestamp(repo.get('last_run_time')))}</td>"
-            f"<td>{escape(repo.get('freshness_lag_human', 'n/a'))}</td>"
-            f"<td>{escape(repo.get('duration_human', 'n/a'))}</td>"
-            f"<td>{escape(repo.get('top_warning', 'None'))}</td>"
-            "</tr>"
-        )
-    empty_row = '<tr><td colspan="6">No repos configured.</td></tr>'
+    root_url = str(summary.get("dashboard_base_url") or "").strip() or "../"
+    generated = escape(format_timestamp(summary.get("generated_at")))
     body = (
         f"<h1>Ops Monitor</h1>"
-        f"<p>Generated {escape(format_timestamp(summary.get('generated_at')))}. "
-        f"OK: {summary['counts']['OK']} | WARN: {summary['counts']['WARN']} | FAIL: {summary['counts']['FAIL']}</p>"
-        "<div class=\"card\">"
-        "<table>"
-        "<thead><tr><th>Repo</th><th>Status</th><th>Last Run</th><th>Freshness Lag</th>"
-        "<th>Duration</th><th>Top Warning</th></tr></thead>"
-        f"<tbody>{''.join(rows) if rows else empty_row}</tbody>"
-        "</table>"
-        "</div>"
+        f"<p>Generated {generated}. This path now redirects to the root overview dashboard.</p>"
+        f"<p><a href=\"{escape(root_url, quote=True)}\">Go to dashboard</a></p>"
+        f"<script>window.location.replace({json.dumps(root_url)});</script>"
+        f"<noscript><p class=\"subtle\">JavaScript is disabled. Use the link above.</p></noscript>"
     )
     return html_template("Ops Monitor", body)
 
@@ -481,6 +477,16 @@ def format_html_value(value: Any) -> str:
 
 
 def render_detail(detail: dict[str, Any]) -> str:
+    dashboard_home_url = str(detail.get("dashboard_home_url") or "../")
+    last_run_help = "UTC timestamp of the latest emitted probe run."
+    freshness_help = (
+        "How stale data is: now minus freshness.max_date (or last_run_time when max_date is missing)."
+    )
+    duration_help = "Runtime reported by the probe for the latest run."
+    schema_hash_help = (
+        "Fingerprint of source schema shape. Changes often indicate schema drift."
+    )
+
     warnings_html = (
         "<ul>" + "".join(f"<li>{escape(item)}</li>" for item in detail.get("warnings", [])) + "</ul>"
         if detail.get("warnings")
@@ -551,7 +557,7 @@ def render_detail(detail: dict[str, Any]) -> str:
     )
 
     body = (
-        f"<p><a href=\"index.html\">Back to dashboard</a> | "
+        f"<p><a href=\"{escape(dashboard_home_url, quote=True)}\">Back to dashboard</a> | "
         f"<a href=\"{escape(detail['slug'])}.json\">Raw JSON</a></p>"
         f"<h1>{escape(detail['full_name'])}</h1>"
         "<div class=\"meta-grid\">"
@@ -559,11 +565,11 @@ def render_detail(detail: dict[str, Any]) -> str:
         f"<span class=\"badge {escape(detail['severity'])}\">{escape(detail['severity'])}</span></div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Probe Status</div>"
         f"<span class=\"badge {escape(detail['status'])}\">{escape(detail['status'])}</span></div>"
-        f"<div class=\"meta-card\"><div class=\"meta-title\">Last Run</div>{escape(format_timestamp(detail.get('last_run_time')))}</div>"
-        f"<div class=\"meta-card\"><div class=\"meta-title\">Freshness Lag</div>{escape(detail.get('freshness_lag_human', 'n/a'))}</div>"
-        f"<div class=\"meta-card\"><div class=\"meta-title\">Duration</div>{escape(detail.get('duration_human', 'n/a'))}</div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\"><span class=\"help\" title=\"{escape(last_run_help, quote=True)}\">Last Run</span></div>{escape(format_timestamp(detail.get('last_run_time')))}</div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\"><span class=\"help\" title=\"{escape(freshness_help, quote=True)}\">Freshness Lag</span></div>{escape(detail.get('freshness_lag_human', 'n/a'))}</div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\"><span class=\"help\" title=\"{escape(duration_help, quote=True)}\">Duration</span></div>{escape(detail.get('duration_human', 'n/a'))}</div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Schema Version</div><code>{escape(detail.get('schema_version') or 'n/a')}</code></div>"
-        f"<div class=\"meta-card\"><div class=\"meta-title\">Schema Hash</div><code>{escape(detail.get('schema_hash') or 'n/a')}</code></div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\"><span class=\"help\" title=\"{escape(schema_hash_help, quote=True)}\">Schema Hash</span></div><code>{escape(detail.get('schema_hash') or 'n/a')}</code></div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Probe</div>"
         f"<a href=\"{escape(detail['probe_source_url'])}\">{escape(detail['probe_source_url'])}</a></div>"
         "</div>"
@@ -703,6 +709,7 @@ def repo_detail(
     top_warning = pick_top_warning(warnings, checks, severity_reasons, fetch_error)
     detail_filename = f"{repo_cfg['slug']}.html"
     detail_url = f"{dashboard_base_url}{detail_filename}" if dashboard_base_url else None
+    dashboard_home_url = dashboard_base_url or "../"
 
     detail = {
         "slug": repo_cfg["slug"],
@@ -731,6 +738,7 @@ def repo_detail(
         "baseline_duration_seconds": baseline,
         "detail_page": detail_filename,
         "detail_url": detail_url,
+        "dashboard_home_url": dashboard_home_url,
         "generated_at": iso_utc(generated_at),
     }
 
@@ -838,7 +846,7 @@ def main() -> int:
     for row in details:
         counts[row["severity"]] = counts.get(row["severity"], 0) + 1
 
-    dashboard_url = f"{base_url}index.html" if base_url else None
+    dashboard_url = base_url or None
     summary = {
         "generated_at": iso_utc(generated),
         "dashboard_base_url": base_url or None,

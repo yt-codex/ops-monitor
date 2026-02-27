@@ -105,6 +105,10 @@
       letter-spacing: 0.04em;
       margin-bottom: 2px;
     }
+    .help {
+      cursor: help;
+      border-bottom: 1px dotted #94a3b8;
+    }
     .badge {
       display: inline-block;
       border-radius: 999px;
@@ -166,7 +170,6 @@
     <h1>Ops Monitor Overview</h1>
     <p class="subtle" id="generated">Loading latest health summary...</p>
     <div class="toolbar">
-      <a href="./docs/index.html">Open full dashboard</a>
       <a href="./docs/latest.json">Open raw latest.json</a>
     </div>
     <section class="counts" id="counts" aria-label="Status counts"></section>
@@ -208,10 +211,14 @@
         return card;
       }
 
-      function repoMetaItem(label, value) {
+      function repoMetaItem(label, value, tooltip) {
         var wrap = document.createElement("div");
         var strong = document.createElement("strong");
         strong.textContent = label;
+        if (tooltip) {
+          strong.className = "help";
+          strong.title = tooltip;
+        }
         var body = document.createElement("div");
         body.textContent = text(value, "n/a");
         wrap.appendChild(strong);
@@ -262,9 +269,21 @@
 
           var meta = document.createElement("div");
           meta.className = "repo-meta";
-          meta.appendChild(repoMetaItem("Last Run", repo.last_run_time || "n/a"));
-          meta.appendChild(repoMetaItem("Freshness Lag", repo.freshness_lag_human || "n/a"));
-          meta.appendChild(repoMetaItem("Duration", repo.duration_human || "n/a"));
+          meta.appendChild(repoMetaItem(
+            "Last Run",
+            repo.last_run_time || "n/a",
+            "UTC timestamp of the latest emitted probe run."
+          ));
+          meta.appendChild(repoMetaItem(
+            "Freshness Lag",
+            repo.freshness_lag_human || "n/a",
+            "How stale data is: now minus freshness.max_date (or last_run_time when max_date is missing)."
+          ));
+          meta.appendChild(repoMetaItem(
+            "Duration",
+            repo.duration_human || "n/a",
+            "Runtime reported by the probe for the latest run."
+          ));
           meta.appendChild(repoMetaItem("Probe Status", repo.status || "n/a"));
           card.appendChild(meta);
 

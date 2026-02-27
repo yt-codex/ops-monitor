@@ -90,6 +90,11 @@
       border-radius: 4px;
       padding: 1px 4px;
       font-size: 0.9em;
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-all;
+      white-space: normal;
     }
     .meta-grid {
       display: grid;
@@ -102,6 +107,7 @@
       border: 1px solid var(--line);
       border-radius: 10px;
       padding: 10px 12px;
+      overflow-wrap: anywhere;
     }
     .meta-title {
       font-size: 0.76rem;
@@ -109,6 +115,10 @@
       letter-spacing: 0.04em;
       color: var(--muted);
       margin-bottom: 4px;
+    }
+    .help {
+      cursor: help;
+      border-bottom: 1px dotted #94a3b8;
     }
     a {
       color: #0f766e;
@@ -125,11 +135,16 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.85rem;
+      word-break: break-word;
+    }
   </style>
 </head>
 <body>
   <main>
-    <h1>Ops Monitor</h1><p>Generated 2026-02-27 17:45 UTC. OK: 1 | WARN: 0 | FAIL: 0</p><div class="card"><table><thead><tr><th>Repo</th><th>Status</th><th>Last Run</th><th>Freshness Lag</th><th>Duration</th><th>Top Warning</th></tr></thead><tbody><tr><td><a href="yt-codex-prize-alert-telegram.html">yt-codex/prize-alert-telegram</a></td><td><span class="badge OK">OK</span></td><td>2026-02-27 17:44 UTC</td><td>0s</td><td>1s</td><td>None</td></tr></tbody></table></div>
+    <h1>Ops Monitor</h1><p>Generated 2026-02-27 18:19 UTC. This path now redirects to the root overview dashboard.</p><p><a href="../">Go to dashboard</a></p><script>window.location.replace("../");</script><noscript><p class="subtle">JavaScript is disabled. Use the link above.</p></noscript>
   </main>
 </body>
 </html>
