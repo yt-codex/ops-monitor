@@ -449,6 +449,7 @@ def render_index(summary: dict[str, Any]) -> str:
             f"<td>{escape(repo.get('top_warning', 'None'))}</td>"
             "</tr>"
         )
+    empty_row = '<tr><td colspan="6">No repos configured.</td></tr>'
     body = (
         f"<h1>Ops Monitor</h1>"
         f"<p>Generated {escape(format_timestamp(summary.get('generated_at')))}. "
@@ -457,7 +458,7 @@ def render_index(summary: dict[str, Any]) -> str:
         "<table>"
         "<thead><tr><th>Repo</th><th>Status</th><th>Last Run</th><th>Freshness Lag</th>"
         "<th>Duration</th><th>Top Warning</th></tr></thead>"
-        f"<tbody>{''.join(rows) if rows else '<tr><td colspan=\"6\">No repos configured.</td></tr>'}</tbody>"
+        f"<tbody>{''.join(rows) if rows else empty_row}</tbody>"
         "</table>"
         "</div>"
     )
