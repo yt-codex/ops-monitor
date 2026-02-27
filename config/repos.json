@@ -10,9 +10,6 @@
   "repos": [
     {
       "repo": "yt-codex/prize-alert-telegram"
-    },
-    {
-      "repo": "your-org/your-repo-b"
     }
   ]
 }
