@@ -424,6 +424,11 @@ def html_template(title: str, body: str) -> str:
       color: var(--muted);
       font-size: 0.9rem;
     }}
+    .mono {{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.85rem;
+      word-break: break-word;
+    }}
   </style>
 </head>
 <body>
@@ -465,6 +470,16 @@ def render_index(summary: dict[str, Any]) -> str:
     return html_template("Ops Monitor", body)
 
 
+def format_html_value(value: Any) -> str:
+    if value is None:
+        return "null"
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, (int, float, str)):
+        return str(value)
+    return json.dumps(value, sort_keys=True)
+
+
 def render_detail(detail: dict[str, Any]) -> str:
     warnings_html = (
         "<ul>" + "".join(f"<li>{escape(item)}</li>" for item in detail.get("warnings", [])) + "</ul>"
@@ -485,16 +500,18 @@ def render_detail(detail: dict[str, Any]) -> str:
 
     checks_rows = []
     for check in detail.get("key_checks", []):
+        metric = format_html_value(check.get("metric")) if "metric" in check else ""
         checks_rows.append(
             "<tr>"
             f"<td>{escape(str(check.get('name', 'check')))}</td>"
             f"<td><span class=\"badge {escape(str(check.get('status', 'WARN')))}\">"
             f"{escape(str(check.get('status', 'WARN')))}</span></td>"
             f"<td>{escape(str(check.get('detail', '')))}</td>"
+            f"<td class=\"mono\">{escape(metric)}</td>"
             "</tr>"
         )
     checks_html = (
-        "<div class=\"card\"><table><thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead>"
+        "<div class=\"card\"><table><thead><tr><th>Check</th><th>Status</th><th>Detail</th><th>Metric</th></tr></thead>"
         f"<tbody>{''.join(checks_rows)}</tbody></table></div>"
         if checks_rows
         else "<p class=\"subtle\">No key checks recorded.</p>"
@@ -515,6 +532,24 @@ def render_detail(detail: dict[str, Any]) -> str:
         else "<p class=\"subtle\">No row counts provided.</p>"
     )
 
+    meta = detail.get("meta")
+    if not isinstance(meta, dict):
+        meta = {}
+    meta_rows = []
+    for key, value in sorted(meta.items()):
+        meta_rows.append(
+            "<tr>"
+            f"<td>{escape(str(key))}</td>"
+            f"<td class=\"mono\">{escape(format_html_value(value))}</td>"
+            "</tr>"
+        )
+    meta_html = (
+        "<div class=\"card\"><table><thead><tr><th>Field</th><th>Value</th></tr></thead>"
+        f"<tbody>{''.join(meta_rows)}</tbody></table></div>"
+        if meta_rows
+        else "<p class=\"subtle\">No meta fields provided.</p>"
+    )
+
     body = (
         f"<p><a href=\"index.html\">Back to dashboard</a> | "
         f"<a href=\"{escape(detail['slug'])}.json\">Raw JSON</a></p>"
@@ -522,15 +557,20 @@ def render_detail(detail: dict[str, Any]) -> str:
         "<div class=\"meta-grid\">"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Severity</div>"
         f"<span class=\"badge {escape(detail['severity'])}\">{escape(detail['severity'])}</span></div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\">Probe Status</div>"
+        f"<span class=\"badge {escape(detail['status'])}\">{escape(detail['status'])}</span></div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Last Run</div>{escape(format_timestamp(detail.get('last_run_time')))}</div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Freshness Lag</div>{escape(detail.get('freshness_lag_human', 'n/a'))}</div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Duration</div>{escape(detail.get('duration_human', 'n/a'))}</div>"
+        f"<div class=\"meta-card\"><div class=\"meta-title\">Schema Version</div><code>{escape(detail.get('schema_version') or 'n/a')}</code></div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Schema Hash</div><code>{escape(detail.get('schema_hash') or 'n/a')}</code></div>"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Probe</div>"
         f"<a href=\"{escape(detail['probe_source_url'])}\">{escape(detail['probe_source_url'])}</a></div>"
         "</div>"
         "<h2>Warnings</h2>"
         f"{warnings_html}"
+        "<h2>Probe Meta</h2>"
+        f"{meta_html}"
         "<h2>Key Checks</h2>"
         f"{checks_html}"
         "<h2>Row Counts</h2>"
@@ -620,6 +660,7 @@ def repo_detail(
         probe_payload.get("duration_seconds", probe_payload.get("duration"))
     )
     schema_hash = str(probe_payload.get("schema_hash") or "").strip() or None
+    schema_version = str(probe_payload.get("schema_version") or "").strip() or None
 
     freshness = probe_payload.get("freshness")
     if not isinstance(freshness, dict):
@@ -679,12 +720,14 @@ def repo_detail(
         "freshness_lag_seconds": lag_seconds,
         "freshness_lag_human": format_seconds(lag_seconds),
         "max_date": str(max_date_value) if max_date_value is not None else None,
+        "schema_version": schema_version,
         "schema_hash": schema_hash,
         "row_counts": row_counts,
         "key_checks": checks,
         "warnings": warnings,
         "top_warning": top_warning,
         "artifact_links": artifact_links,
+        "meta": meta,
         "baseline_duration_seconds": baseline,
         "detail_page": detail_filename,
         "detail_url": detail_url,
