@@ -1,0 +1,75 @@
+name: Ops Monitor
+
+on:
+  schedule:
+    - cron: "43 17 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ops-monitor
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect probes and render docs
+        env:
+          GH_TOKEN: ${{ secrets.PROBE_READ_TOKEN || github.token }}
+          DASHBOARD_BASE_URL: ${{ vars.DASHBOARD_BASE_URL }}
+        run: |
+          python scripts/collect_probes.py \
+            --config config/repos.json \
+            --output data/latest.json \
+            --history-dir data/history \
+            --details-dir data/details \
+            --docs-dir docs
+
+      - name: Send Telegram alerts
+        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' && secrets.TELEGRAM_CHAT_ID != '' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python scripts/send_telegram_alerts.py --summary data/latest.json
+
+      - name: Commit monitor outputs
+        run: |
+          if git diff --quiet -- docs data; then
+            echo "No monitor changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs data
+          git commit -m "chore: refresh ops monitor outputs"
+          git push
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

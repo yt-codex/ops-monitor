@@ -1,0 +1,18 @@
+{
+  "history_retention": 40,
+  "defaults": {
+    "branch": "main",
+    "probe_path": "ops/probe.json",
+    "freshness_warn_hours": 24,
+    "freshness_fail_hours": 72,
+    "duration_warn_multiplier": 2.0
+  },
+  "repos": [
+    {
+      "repo": "your-org/your-repo-a"
+    },
+    {
+      "repo": "your-org/your-repo-b"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ops Monitor - your-org/your-repo-b</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --warn: #854d0e;
+      --warn-bg: #fef3c7;
+      --fail: #991b1b;
+      --fail-bg: #fee2e2;
+      --line: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .OK {
+      color: var(--ok);
+      background: var(--ok-bg);
+    }
+    .WARN {
+      color: var(--warn);
+      background: var(--warn-bg);
+    }
+    .FAIL {
+      color: var(--fail);
+      background: var(--fail-bg);
+    }
+    code {
+      background: #e2e8f0;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-size: 0.9em;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .meta-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .meta-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="index.html">Back to dashboard</a> | <a href="your-org-your-repo-b.json">Raw JSON</a></p><h1>your-org/your-repo-b</h1><div class="meta-grid"><div class="meta-card"><div class="meta-title">Severity</div><span class="badge FAIL">FAIL</span></div><div class="meta-card"><div class="meta-title">Last Run</div>n/a</div><div class="meta-card"><div class="meta-title">Freshness Lag</div>n/a</div><div class="meta-card"><div class="meta-title">Duration</div>n/a</div><div class="meta-card"><div class="meta-title">Schema Hash</div><code>n/a</code></div><div class="meta-card"><div class="meta-title">Probe</div><a href="https://github.com/your-org/your-repo-b/blob/main/ops/probe.json">https://github.com/your-org/your-repo-b/blob/main/ops/probe.json</a></div></div><h2>Warnings</h2><ul><li>Probe fetch failed: probe not found (ops/probe.json on main)</li></ul><h2>Key Checks</h2><p class="subtle">No key checks recorded.</p><h2>Row Counts</h2><p class="subtle">No row counts provided.</p><h2>Artifacts</h2><p class="subtle">No artifacts.</p>
+  </main>
+</body>
+</html>

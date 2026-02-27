@@ -1,0 +1,32 @@
+[
+  {
+    "captured_at": "2026-02-27T14:20:50Z",
+    "last_run_time": null,
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": null,
+    "freshness_lag_seconds": null,
+    "schema_hash": null,
+    "top_warning": "Probe fetch failed: probe not found (ops/probe.json on main)"
+  },
+  {
+    "captured_at": "2026-02-27T14:21:25Z",
+    "last_run_time": null,
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": null,
+    "freshness_lag_seconds": null,
+    "schema_hash": null,
+    "top_warning": "Probe fetch failed: probe not found (ops/probe.json on main)"
+  },
+  {
+    "captured_at": "2026-02-27T14:22:07Z",
+    "last_run_time": null,
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": null,
+    "freshness_lag_seconds": null,
+    "schema_hash": null,
+    "top_warning": "Probe fetch failed: probe not found (ops/probe.json on main)"
+  }
+]

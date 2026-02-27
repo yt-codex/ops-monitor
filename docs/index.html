@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ops Monitor</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --warn: #854d0e;
+      --warn-bg: #fef3c7;
+      --fail: #991b1b;
+      --fail-bg: #fee2e2;
+      --line: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .OK {
+      color: var(--ok);
+      background: var(--ok-bg);
+    }
+    .WARN {
+      color: var(--warn);
+      background: var(--warn-bg);
+    }
+    .FAIL {
+      color: var(--fail);
+      background: var(--fail-bg);
+    }
+    code {
+      background: #e2e8f0;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-size: 0.9em;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .meta-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .meta-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ops Monitor</h1><p>Generated 2026-02-27 14:22 UTC. OK: 0 | WARN: 0 | FAIL: 2</p><div class="card"><table><thead><tr><th>Repo</th><th>Status</th><th>Last Run</th><th>Freshness Lag</th><th>Duration</th><th>Top Warning</th></tr></thead><tbody><tr><td><a href="your-org-your-repo-a.html">your-org/your-repo-a</a></td><td><span class="badge FAIL">FAIL</span></td><td>n/a</td><td>n/a</td><td>n/a</td><td>Probe fetch failed: probe not found (ops/probe.json on main)</td></tr><tr><td><a href="your-org-your-repo-b.html">your-org/your-repo-b</a></td><td><span class="badge FAIL">FAIL</span></td><td>n/a</td><td>n/a</td><td>n/a</td><td>Probe fetch failed: probe not found (ops/probe.json on main)</td></tr></tbody></table></div>
+  </main>
+</body>
+</html>

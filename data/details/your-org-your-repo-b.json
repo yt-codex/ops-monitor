@@ -1,0 +1,29 @@
+{
+  "slug": "your-org-your-repo-b",
+  "owner": "your-org",
+  "repo": "your-repo-b",
+  "full_name": "your-org/your-repo-b",
+  "branch": "main",
+  "probe_path": "ops/probe.json",
+  "probe_source_url": "https://github.com/your-org/your-repo-b/blob/main/ops/probe.json",
+  "status": "FAIL",
+  "severity": "FAIL",
+  "last_run_time": null,
+  "duration_seconds": null,
+  "duration_human": "n/a",
+  "freshness_lag_seconds": null,
+  "freshness_lag_human": "n/a",
+  "max_date": null,
+  "schema_hash": null,
+  "row_counts": {},
+  "key_checks": [],
+  "warnings": [
+    "Probe fetch failed: probe not found (ops/probe.json on main)"
+  ],
+  "top_warning": "Probe fetch failed: probe not found (ops/probe.json on main)",
+  "artifact_links": [],
+  "baseline_duration_seconds": null,
+  "detail_page": "your-org-your-repo-b.html",
+  "detail_url": null,
+  "generated_at": "2026-02-27T14:22:07Z"
+}
