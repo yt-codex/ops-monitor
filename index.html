@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ops Monitor Overview</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --warn: #854d0e;
+      --warn-bg: #fef3c7;
+      --fail: #991b1b;
+      --fail-bg: #fee2e2;
+      --link: #0f766e;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.4;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .subtle {
+      color: var(--muted);
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+    .toolbar {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .counts {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .count-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+    .count-value {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+    .repo-grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 12px;
+    }
+    .repo-name {
+      margin: 0;
+      font-size: 1.02rem;
+      word-break: break-word;
+    }
+    .repo-meta {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+      font-size: 0.9rem;
+    }
+    .repo-meta strong {
+      color: var(--muted);
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-left: 8px;
+    }
+    .OK {
+      color: var(--ok);
+      background: var(--ok-bg);
+    }
+    .WARN {
+      color: var(--warn);
+      background: var(--warn-bg);
+    }
+    .FAIL {
+      color: var(--fail);
+      background: var(--fail-bg);
+    }
+    .warn-text {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .detail-link {
+      margin-top: 12px;
+      display: inline-block;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .empty,
+    .error {
+      margin-top: 16px;
+      border-left: 4px solid var(--line);
+      padding: 10px 12px;
+      background: var(--card);
+      border-radius: 8px;
+      color: var(--muted);
+    }
+    .error {
+      border-left-color: var(--fail);
+    }
+    @media (max-width: 760px) {
+      .counts {
+        grid-template-columns: 1fr;
+      }
+      .repo-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Ops Monitor Overview</h1>
+    <p class="subtle" id="generated">Loading latest health summary...</p>
+    <div class="toolbar">
+      <a href="./docs/index.html">Open full dashboard</a>
+      <a href="./docs/latest.json">Open raw latest.json</a>
+    </div>
+    <section class="counts" id="counts" aria-label="Status counts"></section>
+    <section class="repo-grid" id="repos" aria-label="Repository health cards"></section>
+    <div id="feedback"></div>
+  </main>
+  <script>
+    (function () {
+      var STATUS_ORDER = { FAIL: 0, WARN: 1, OK: 2 };
+      var countsEl = document.getElementById("counts");
+      var reposEl = document.getElementById("repos");
+      var feedbackEl = document.getElementById("feedback");
+      var generatedEl = document.getElementById("generated");
+
+      function text(value, fallback) {
+        if (value === null || value === undefined || value === "") {
+          return fallback;
+        }
+        return String(value);
+      }
+
+      function countCard(label, value, statusClass) {
+        var card = document.createElement("article");
+        card.className = "card";
+        var labelEl = document.createElement("div");
+        labelEl.className = "count-label";
+        labelEl.textContent = label;
+        var valueEl = document.createElement("div");
+        valueEl.className = "count-value";
+        valueEl.textContent = text(value, "0");
+        if (statusClass) {
+          var badge = document.createElement("span");
+          badge.className = "badge " + statusClass;
+          badge.textContent = statusClass;
+          valueEl.appendChild(badge);
+        }
+        card.appendChild(labelEl);
+        card.appendChild(valueEl);
+        return card;
+      }
+
+      function repoMetaItem(label, value) {
+        var wrap = document.createElement("div");
+        var strong = document.createElement("strong");
+        strong.textContent = label;
+        var body = document.createElement("div");
+        body.textContent = text(value, "n/a");
+        wrap.appendChild(strong);
+        wrap.appendChild(body);
+        return wrap;
+      }
+
+      function render(summary) {
+        var counts = summary && summary.counts ? summary.counts : {};
+        countsEl.innerHTML = "";
+        countsEl.appendChild(countCard("OK", counts.OK || 0, "OK"));
+        countsEl.appendChild(countCard("WARN", counts.WARN || 0, "WARN"));
+        countsEl.appendChild(countCard("FAIL", counts.FAIL || 0, "FAIL"));
+
+        var repos = summary && Array.isArray(summary.repos) ? summary.repos.slice() : [];
+        repos.sort(function (a, b) {
+          var left = STATUS_ORDER[text(a.severity, "OK")] || 99;
+          var right = STATUS_ORDER[text(b.severity, "OK")] || 99;
+          if (left !== right) return left - right;
+          return text(a.full_name, "").localeCompare(text(b.full_name, ""));
+        });
+
+        reposEl.innerHTML = "";
+        feedbackEl.innerHTML = "";
+
+        if (!repos.length) {
+          var empty = document.createElement("div");
+          empty.className = "empty";
+          empty.textContent = "No repos found in latest summary.";
+          feedbackEl.appendChild(empty);
+          return;
+        }
+
+        repos.forEach(function (repo) {
+          var card = document.createElement("article");
+          card.className = "card";
+
+          var title = document.createElement("h2");
+          title.className = "repo-name";
+          title.textContent = text(repo.full_name, "unknown/repo");
+
+          var sev = text(repo.severity, "OK");
+          var badge = document.createElement("span");
+          badge.className = "badge " + sev;
+          badge.textContent = sev;
+          title.appendChild(badge);
+          card.appendChild(title);
+
+          var meta = document.createElement("div");
+          meta.className = "repo-meta";
+          meta.appendChild(repoMetaItem("Last Run", repo.last_run_time || "n/a"));
+          meta.appendChild(repoMetaItem("Freshness Lag", repo.freshness_lag_human || "n/a"));
+          meta.appendChild(repoMetaItem("Duration", repo.duration_human || "n/a"));
+          meta.appendChild(repoMetaItem("Probe Status", repo.status || "n/a"));
+          card.appendChild(meta);
+
+          var warning = document.createElement("div");
+          warning.className = "warn-text";
+          warning.textContent = "Top warning: " + text(repo.top_warning, "none");
+          card.appendChild(warning);
+
+          var detail = document.createElement("a");
+          detail.className = "detail-link";
+          detail.href = "./docs/" + text(repo.slug, "") + ".html";
+          detail.textContent = "Open app detail";
+          card.appendChild(detail);
+
+          reposEl.appendChild(card);
+        });
+      }
+
+      async function load() {
+        try {
+          var res = await fetch("./docs/latest.json", { cache: "no-store" });
+          if (!res.ok) {
+            throw new Error("HTTP " + res.status);
+          }
+          var summary = await res.json();
+          generatedEl.textContent =
+            "Generated: " + text(summary.generated_at, "n/a") +
+            " | Apps: " + text(summary.repo_count, "0");
+          render(summary);
+        } catch (err) {
+          countsEl.innerHTML = "";
+          reposEl.innerHTML = "";
+          generatedEl.textContent = "Could not load latest health summary.";
+          var error = document.createElement("div");
+          error.className = "error";
+          error.textContent =
+            "Failed to load ./docs/latest.json. Run the monitor workflow and ensure docs artifacts are published.";
+          feedbackEl.appendChild(error);
+        }
+      }
+
+      load();
+    })();
+  </script>
+</body>
+</html>
