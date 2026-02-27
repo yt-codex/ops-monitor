@@ -11,8 +11,8 @@
   "last_run_time": "2026-02-27T17:05:33Z",
   "duration_seconds": 0.0,
   "duration_human": "0s",
-  "freshness_lag_seconds": 398.107681,
-  "freshness_lag_human": "6m 38s",
+  "freshness_lag_seconds": 946.702784,
+  "freshness_lag_human": "15m 46s",
   "max_date": null,
   "schema_hash": null,
   "row_counts": {},
@@ -30,5 +30,5 @@
   "baseline_duration_seconds": null,
   "detail_page": "yt-codex-prize-alert-telegram.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
-  "generated_at": "2026-02-27T17:12:11Z"
+  "generated_at": "2026-02-27T17:21:19Z"
 }
