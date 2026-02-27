@@ -1,0 +1,12 @@
+[
+  {
+    "captured_at": "2026-02-27T15:39:58Z",
+    "last_run_time": "2026-02-27T15:16:17Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 0.0,
+    "freshness_lag_seconds": 1421.731661,
+    "schema_hash": null,
+    "top_warning": "workload outcome: success"
+  }
+]

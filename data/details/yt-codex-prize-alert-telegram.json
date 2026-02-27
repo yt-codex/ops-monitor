@@ -1,0 +1,34 @@
+{
+  "slug": "yt-codex-prize-alert-telegram",
+  "owner": "yt-codex",
+  "repo": "prize-alert-telegram",
+  "full_name": "yt-codex/prize-alert-telegram",
+  "branch": "main",
+  "probe_path": "ops/probe.json",
+  "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
+  "status": "OK",
+  "severity": "OK",
+  "last_run_time": "2026-02-27T15:16:17Z",
+  "duration_seconds": 0.0,
+  "duration_human": "0s",
+  "freshness_lag_seconds": 1421.731661,
+  "freshness_lag_human": "23m 41s",
+  "max_date": null,
+  "schema_hash": null,
+  "row_counts": {},
+  "key_checks": [],
+  "warnings": [
+    "workload outcome: success"
+  ],
+  "top_warning": "workload outcome: success",
+  "artifact_links": [
+    {
+      "label": "workflow_run",
+      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22491905443"
+    }
+  ],
+  "baseline_duration_seconds": null,
+  "detail_page": "yt-codex-prize-alert-telegram.html",
+  "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
+  "generated_at": "2026-02-27T15:39:58Z"
+}
