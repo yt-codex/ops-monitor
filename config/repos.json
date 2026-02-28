@@ -10,6 +10,9 @@
   "repos": [
     {
       "repo": "yt-codex/prize-alert-telegram"
+    },
+    {
+      "repo": "yt-codex/amenities-dashboard"
     }
   ]
 }
