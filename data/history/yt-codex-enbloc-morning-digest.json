@@ -8,5 +8,15 @@
     "freshness_lag_seconds": null,
     "schema_hash": null,
     "top_warning": "Probe fetch failed: http 403"
+  },
+  {
+    "captured_at": "2026-02-28T05:52:06Z",
+    "last_run_time": "2026-02-28T05:22:54Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": 34.0,
+    "freshness_lag_seconds": 2929.0,
+    "schema_hash": "a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c",
+    "top_warning": "Google News resolution degraded (success=0, fallback=85, failure=85)"
   }
 ]
