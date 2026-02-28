@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T09:56:48Z",
+  "generated_at": "2026-02-28T17:53:56Z",
   "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
   "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
   "repo_count": 4,
@@ -123,7 +123,7 @@
       "detail_page": "yt-codex-amenities-dashboard.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T09:56:48Z"
+      "generated_at": "2026-02-28T17:53:56Z"
     },
     {
       "slug": "yt-codex-enbloc-morning-digest",
@@ -240,7 +240,7 @@
       "detail_page": "yt-codex-enbloc-morning-digest.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T09:56:48Z"
+      "generated_at": "2026-02-28T17:53:56Z"
     },
     {
       "slug": "yt-codex-prize-alert-telegram",
@@ -252,7 +252,7 @@
       "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
       "status": "OK",
       "severity": "OK",
-      "last_run_time": "2026-02-27T19:22:17Z",
+      "last_run_time": "2026-02-28T17:47:52Z",
       "duration_seconds": 2.0,
       "duration_human": "2s",
       "freshness_lag_seconds": 0.0,
@@ -310,21 +310,21 @@
       "artifact_links": [
         {
           "label": "workflow_run",
-          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22500477014"
+          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22525786677"
         }
       ],
       "meta": {
-        "run_id": "22500477014",
-        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22500477014",
+        "run_id": "22525786677",
+        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22525786677",
         "workflow": "Scheduled Ops Probe",
         "job": "run-and-emit-probe",
-        "sha": "26df0a45b45a865708845d4f21e2693ba60d9cc0"
+        "sha": "e3cd685fd65fe273f5383065033291675f7b9e77"
       },
       "baseline_duration_seconds": 2.0,
       "detail_page": "yt-codex-prize-alert-telegram.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T09:56:48Z"
+      "generated_at": "2026-02-28T17:53:56Z"
     },
     {
       "slug": "yt-codex-sg-developers-health-monitor",
@@ -582,7 +582,7 @@
       "detail_page": "yt-codex-sg-developers-health-monitor.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-developers-health-monitor.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T09:56:48Z"
+      "generated_at": "2026-02-28T17:53:56Z"
     }
   ]
 }
