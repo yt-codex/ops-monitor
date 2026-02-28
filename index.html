@@ -6,18 +6,19 @@
   <title>Ops Monitor Overview</title>
   <style>
     :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --line: #e2e8f0;
-      --ok: #166534;
-      --ok-bg: #dcfce7;
-      --warn: #854d0e;
-      --warn-bg: #fef3c7;
-      --fail: #991b1b;
-      --fail-bg: #fee2e2;
-      --link: #0f766e;
+      color-scheme: dark;
+      --bg: #0a0f19;
+      --card: #10192b;
+      --text: #e6edf7;
+      --muted: #94a6c2;
+      --line: #22314a;
+      --ok: #7be5a5;
+      --ok-bg: #123323;
+      --warn: #f6d06f;
+      --warn-bg: #3a2d0d;
+      --fail: #ffb0b0;
+      --fail-bg: #441a20;
+      --link: #82d4ff;
     }
     * {
       box-sizing: border-box;
@@ -26,17 +27,20 @@
       margin: 0;
       font-family: "Segoe UI", "Helvetica Neue", sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(900px 420px at 10% -10%, #1a2740 0%, transparent 60%),
+        var(--bg);
       line-height: 1.4;
     }
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 28px 16px 40px;
     }
     h1 {
       margin: 0;
       font-size: 1.8rem;
+      letter-spacing: 0.01em;
     }
     .subtle {
       color: var(--muted);
@@ -53,8 +57,9 @@
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 12px;
       padding: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
     }
     .counts {
       margin-top: 16px;
@@ -83,6 +88,7 @@
       margin: 0;
       font-size: 1.02rem;
       word-break: break-word;
+      color: #f5f9ff;
     }
     .repo-meta {
       margin-top: 10px;
@@ -101,7 +107,7 @@
     }
     .help {
       cursor: help;
-      border-bottom: 1px dotted #94a3b8;
+      border-bottom: 1px dotted #6f86a8;
     }
     .badge {
       display: inline-block;
@@ -111,6 +117,7 @@
       font-weight: 700;
       letter-spacing: 0.02em;
       margin-left: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
     }
     .OK {
       color: var(--ok);
@@ -136,6 +143,8 @@
       display: inline-block;
       font-size: 0.92rem;
       font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
     .empty,
     .error {
