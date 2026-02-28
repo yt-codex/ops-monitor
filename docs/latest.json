@@ -1,14 +1,130 @@
 {
-  "generated_at": "2026-02-28T04:42:39Z",
+  "generated_at": "2026-02-28T04:44:13Z",
   "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
   "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
-  "repo_count": 1,
+  "repo_count": 2,
   "counts": {
-    "OK": 1,
+    "OK": 2,
     "WARN": 0,
     "FAIL": 0
   },
   "repos": [
+    {
+      "slug": "yt-codex-amenities-dashboard",
+      "owner": "yt-codex",
+      "repo": "amenities-dashboard",
+      "full_name": "yt-codex/amenities-dashboard",
+      "branch": "main",
+      "probe_path": "ops/probe.json",
+      "probe_source_url": "https://github.com/yt-codex/amenities-dashboard/blob/main/ops/probe.json",
+      "status": "OK",
+      "severity": "OK",
+      "last_run_time": "2026-02-28T04:41:56Z",
+      "duration_seconds": 24.0,
+      "duration_human": "24s",
+      "freshness_lag_seconds": 1.268784,
+      "freshness_lag_human": "1s",
+      "max_date": "2026-02-28T04:41:56Z",
+      "schema_version": "1.0",
+      "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
+      "row_counts": {
+        "denoms_vintages": 5,
+        "amenities_snapshots": 1,
+        "amenities_rows_sz": 856,
+        "amenities_rows_pa": 234,
+        "schools_primary_points": 179,
+        "schools_secondary_points": 133,
+        "overpass_points_total": 1785
+      },
+      "key_checks": [
+        {
+          "name": "singstat_discovery",
+          "status": "OK",
+          "detail": "SingStat denominator links discovered.",
+          "metric": {
+            "years": 5
+          }
+        },
+        {
+          "name": "singstat_fetch_parse",
+          "status": "OK",
+          "detail": "SingStat ZIP/CSV parse succeeded.",
+          "metric": {
+            "rows": 60424,
+            "dropped": 0
+          }
+        },
+        {
+          "name": "moe_datagov_fetch",
+          "status": "OK",
+          "detail": "MOE datastore fetch succeeded."
+        },
+        {
+          "name": "onemap_auth_geocode",
+          "status": "OK",
+          "detail": "OneMap auth/geocode completed with measured success rate.",
+          "metric": {
+            "eligible": 312,
+            "resolved": 312,
+            "unresolved": 0,
+            "success_rate": 1.0
+          }
+        },
+        {
+          "name": "overpass_fetch",
+          "status": "OK",
+          "detail": "Overpass fetch succeeded across OSM categories."
+        },
+        {
+          "name": "denom_tests",
+          "status": "OK",
+          "detail": "Denominator tests passed."
+        },
+        {
+          "name": "amenity_tests",
+          "status": "OK",
+          "detail": "Amenity tests passed."
+        },
+        {
+          "name": "output_write",
+          "status": "OK",
+          "detail": "Output files written and readable."
+        }
+      ],
+      "warnings": [],
+      "top_warning": "None",
+      "artifact_links": [
+        {
+          "label": "workflow_run",
+          "url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/22513557420"
+        },
+        {
+          "label": "denoms_index",
+          "url": "https://github.com/yt-codex/amenities-dashboard/blob/6f334af2849055bf7d8b7340fec56e682569058a/web/data/denoms_index.json"
+        },
+        {
+          "label": "amenities_index",
+          "url": "https://github.com/yt-codex/amenities-dashboard/blob/6f334af2849055bf7d8b7340fec56e682569058a/web/data/amenities_index.json"
+        },
+        {
+          "label": "ops_probe",
+          "url": "https://github.com/yt-codex/amenities-dashboard/blob/6f334af2849055bf7d8b7340fec56e682569058a/ops/probe.json"
+        }
+      ],
+      "meta": {
+        "repo": "yt-codex/amenities-dashboard",
+        "run_id": "22513557420",
+        "run_url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/22513557420",
+        "workflow": "Refresh Dashboard Data",
+        "job": "refresh",
+        "sha": "6f334af2849055bf7d8b7340fec56e682569058a"
+      },
+      "baseline_duration_seconds": null,
+      "detail_page": "yt-codex-amenities-dashboard.html",
+      "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
+      "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
+      "generated_at": "2026-02-28T04:44:13Z"
+    },
     {
       "slug": "yt-codex-prize-alert-telegram",
       "owner": "yt-codex",
@@ -91,7 +207,7 @@
       "detail_page": "yt-codex-prize-alert-telegram.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T04:42:39Z"
+      "generated_at": "2026-02-28T04:44:13Z"
     }
   ]
 }
