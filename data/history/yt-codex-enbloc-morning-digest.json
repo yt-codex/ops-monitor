@@ -18,5 +18,15 @@
     "freshness_lag_seconds": 2929.0,
     "schema_hash": "a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c",
     "top_warning": "Google News resolution degraded (success=0, fallback=85, failure=85)"
+  },
+  {
+    "captured_at": "2026-02-28T06:32:35Z",
+    "last_run_time": "2026-02-28T06:24:40Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": 1.0,
+    "freshness_lag_seconds": 720.0,
+    "schema_hash": "ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac",
+    "top_warning": "schema hash changed from a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c to ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac"
   }
 ]

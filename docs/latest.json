@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-28T05:52:06Z",
+  "generated_at": "2026-02-28T06:32:35Z",
   "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
   "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
   "repo_count": 3,
@@ -19,19 +19,19 @@
       "probe_source_url": "https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json",
       "status": "WARN",
       "severity": "WARN",
-      "last_run_time": "2026-02-28T05:22:54Z",
-      "duration_seconds": 34.0,
-      "duration_human": "34s",
-      "freshness_lag_seconds": 2929.0,
-      "freshness_lag_human": "48m 49s",
-      "max_date": "2026-02-28T04:34:05Z",
+      "last_run_time": "2026-02-28T06:24:40Z",
+      "duration_seconds": 1.0,
+      "duration_human": "1s",
+      "freshness_lag_seconds": 720.0,
+      "freshness_lag_human": "12m 0s",
+      "max_date": "2026-02-28T06:12:40Z",
       "schema_version": null,
-      "schema_hash": "a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c",
+      "schema_hash": "ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac",
       "row_counts": {
-        "alert_eligible": 84,
-        "email_sent": 1,
-        "inserted": 245,
-        "matches": 18,
+        "alert_eligible": 0,
+        "email_sent": 0,
+        "inserted": 0,
+        "matches": 0,
         "non_empty_feed_count": 8,
         "total_feed_items_seen": 220
       },
@@ -77,57 +77,56 @@
         },
         {
           "name": "google_news_resolution",
-          "status": "WARN",
-          "detail": "Google News resolution degraded (success=0, fallback=85, failure=85)",
+          "status": "OK",
+          "detail": "no Google News rows inserted in this run",
           "metric": {
-            "failure": 85,
-            "fallback": 85,
+            "failure": 0,
+            "fallback": 0,
             "success": 0
           }
         },
         {
           "name": "article_fetch",
-          "status": "WARN",
-          "detail": "74 matched item(s) missing fetched article body/date",
+          "status": "OK",
+          "detail": "no matched items in this run",
           "metric": {
-            "failure": 74,
-            "success": 10
+            "failure": 0,
+            "success": 0
           }
         },
         {
           "name": "schema_fingerprint",
-          "status": "OK",
-          "detail": "no prior schema hash available for drift comparison",
+          "status": "WARN",
+          "detail": "schema hash changed from a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c to ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac",
           "metric": {
-            "previous_schema_hash": null,
-            "schema_changed": false,
-            "schema_hash": "a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c"
+            "previous_schema_hash": "a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c",
+            "schema_changed": true,
+            "schema_hash": "ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac"
           }
         }
       ],
       "warnings": [
-        "Google News resolution degraded (success=0, fallback=85, failure=85)",
-        "74 matched item(s) missing fetched article body/date"
+        "schema hash changed from a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c to ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac"
       ],
-      "top_warning": "Google News resolution degraded (success=0, fallback=85, failure=85)",
+      "top_warning": "schema hash changed from a03f4686c1cc5d792f2050aa04b34018e1fe879522484a2aff38226e2b1a978c to ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac",
       "artifact_links": [
         {
           "label": "GitHub Actions Run",
-          "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/22514199594"
+          "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/22515187984"
         }
       ],
       "meta": {
         "repo": "yt-codex/enbloc-morning-digest",
         "run_attempt": "1",
-        "run_id": "22514199594",
-        "sha": "7df3fb3bf31cab0167cca670b16b22ceb425cd7f",
+        "run_id": "22515187984",
+        "sha": "aac0f922b0b9c7d0265c844daa0e7be33b6db03e",
         "workflow": "Daily En-Bloc Digest"
       },
       "baseline_duration_seconds": null,
       "detail_page": "yt-codex-enbloc-morning-digest.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T05:52:06Z"
+      "generated_at": "2026-02-28T06:32:35Z"
     },
     {
       "slug": "yt-codex-amenities-dashboard",
@@ -243,7 +242,7 @@
       "detail_page": "yt-codex-amenities-dashboard.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T05:52:06Z"
+      "generated_at": "2026-02-28T06:32:35Z"
     },
     {
       "slug": "yt-codex-prize-alert-telegram",
@@ -327,7 +326,7 @@
       "detail_page": "yt-codex-prize-alert-telegram.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-02-28T05:52:06Z"
+      "generated_at": "2026-02-28T06:32:35Z"
     }
   ]
 }
