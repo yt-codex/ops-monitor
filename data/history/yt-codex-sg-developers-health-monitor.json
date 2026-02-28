@@ -18,5 +18,15 @@
     "freshness_lag_seconds": 14.0,
     "schema_hash": "0df77be8c1938c5405e81fa6d94a4f799ccd7d57c7d11a1da361918943e40c3c",
     "top_warning": "macro.partial_degradation: macro failures increased vs baseline (0/0 -> 0/7); 0 time columns detected | no matching series | no matching series"
+  },
+  {
+    "captured_at": "2026-02-28T09:56:48Z",
+    "last_run_time": "2026-02-28T09:52:47Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 348.0,
+    "schema_hash": "0df77be8c1938c5405e81fa6d94a4f799ccd7d57c7d11a1da361918943e40c3c",
+    "top_warning": "None"
   }
 ]
