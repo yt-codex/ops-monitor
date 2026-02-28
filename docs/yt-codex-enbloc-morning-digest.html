@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ops Monitor - yt-codex/enbloc-morning-digest</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --ok: #166534;
+      --ok-bg: #dcfce7;
+      --warn: #854d0e;
+      --warn-bg: #fef3c7;
+      --fail: #991b1b;
+      --fail-bg: #fee2e2;
+      --line: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+    }
+    p {
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .OK {
+      color: var(--ok);
+      background: var(--ok-bg);
+    }
+    .WARN {
+      color: var(--warn);
+      background: var(--warn-bg);
+    }
+    .FAIL {
+      color: var(--fail);
+      background: var(--fail-bg);
+    }
+    code {
+      background: #e2e8f0;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-size: 0.9em;
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      word-break: break-all;
+      white-space: normal;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .meta-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      overflow-wrap: anywhere;
+    }
+    .meta-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .help {
+      cursor: help;
+      border-bottom: 1px dotted #94a3b8;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .subtle {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.85rem;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="https://yt-codex.github.io/ops-monitor/">Back to dashboard</a> | <a href="yt-codex-enbloc-morning-digest.json">Raw JSON</a></p><h1>yt-codex/enbloc-morning-digest</h1><div class="meta-grid"><div class="meta-card"><div class="meta-title">Severity</div><span class="badge FAIL">FAIL</span></div><div class="meta-card"><div class="meta-title">Probe Status</div><span class="badge FAIL">FAIL</span></div><div class="meta-card"><div class="meta-title"><span class="help" title="UTC timestamp of the latest emitted probe run.">Last Run</span></div>n/a</div><div class="meta-card"><div class="meta-title"><span class="help" title="How stale data is: now minus freshness.max_date (or last_run_time when max_date is missing).">Freshness Lag</span></div>n/a</div><div class="meta-card"><div class="meta-title"><span class="help" title="Runtime reported by the probe for the latest run.">Duration</span></div>n/a</div><div class="meta-card"><div class="meta-title">Schema Version</div><code>n/a</code></div><div class="meta-card"><div class="meta-title"><span class="help" title="Fingerprint of source schema shape. Changes often indicate schema drift.">Schema Hash</span></div><code>n/a</code></div><div class="meta-card"><div class="meta-title">Probe</div><a href="https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json">https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json</a></div></div><h2>Warnings</h2><ul><li>Probe fetch failed: http 403</li></ul><h2>Probe Meta</h2><p class="subtle">No meta fields provided.</p><h2>Key Checks</h2><p class="subtle">No key checks recorded.</p><h2>Row Counts</h2><p class="subtle">No row counts provided.</p><h2>Artifacts</h2><p class="subtle">No artifacts.</p>
+  </main>
+</body>
+</html>

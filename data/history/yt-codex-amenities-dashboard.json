@@ -8,5 +8,15 @@
     "freshness_lag_seconds": 1.268784,
     "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-02-28T05:26:01Z",
+    "last_run_time": "2026-02-28T04:41:56Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 24.0,
+    "freshness_lag_seconds": 1.268784,
+    "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
+    "top_warning": "None"
   }
 ]

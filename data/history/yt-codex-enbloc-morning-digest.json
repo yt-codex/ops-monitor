@@ -1,0 +1,12 @@
+[
+  {
+    "captured_at": "2026-02-28T05:26:01Z",
+    "last_run_time": null,
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": null,
+    "freshness_lag_seconds": null,
+    "schema_hash": null,
+    "top_warning": "Probe fetch failed: http 403"
+  }
+]
