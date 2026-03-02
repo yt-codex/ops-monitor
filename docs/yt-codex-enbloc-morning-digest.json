@@ -8,21 +8,21 @@
   "probe_source_url": "https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json",
   "status": "WARN",
   "severity": "WARN",
-  "last_run_time": "2026-03-01T00:33:20Z",
-  "duration_seconds": 42.0,
-  "duration_human": "42s",
-  "freshness_lag_seconds": 1429.0,
-  "freshness_lag_human": "23m 49s",
-  "max_date": "2026-03-01T00:09:31Z",
+  "last_run_time": "2026-03-02T00:33:36Z",
+  "duration_seconds": 52.0,
+  "duration_human": "52s",
+  "freshness_lag_seconds": 1176.0,
+  "freshness_lag_human": "19m 36s",
+  "max_date": "2026-03-02T00:14:00Z",
   "schema_version": null,
-  "schema_hash": "baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468",
+  "schema_hash": "af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d",
   "row_counts": {
-    "alert_eligible": 82,
+    "alert_eligible": 87,
     "email_sent": 1,
-    "inserted": 247,
-    "matches": 18,
+    "inserted": 219,
+    "matches": 20,
     "non_empty_feed_count": 8,
-    "total_feed_items_seen": 213
+    "total_feed_items_seen": 190
   },
   "key_checks": [
     {
@@ -71,49 +71,49 @@
       "metric": {
         "failure": 0,
         "fallback": 0,
-        "success": 87
+        "success": 89
       }
     },
     {
       "name": "article_fetch",
       "status": "OK",
-      "detail": "article fetch succeeded for 7 matched item(s); 77 missing fetched article body/date",
+      "detail": "article fetch succeeded for 8 matched item(s); 80 missing fetched article body/date",
       "metric": {
-        "failure": 77,
-        "success": 7
+        "failure": 80,
+        "success": 8
       }
     },
     {
       "name": "schema_fingerprint",
       "status": "WARN",
-      "detail": "schema hash changed from ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac to baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468",
+      "detail": "schema hash changed from baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468 to af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d",
       "metric": {
-        "previous_schema_hash": "ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac",
+        "previous_schema_hash": "baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468",
         "schema_changed": true,
-        "schema_hash": "baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468"
+        "schema_hash": "af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d"
       }
     }
   ],
   "warnings": [
-    "schema hash changed from ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac to baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468"
+    "schema hash changed from baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468 to af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d"
   ],
-  "top_warning": "schema hash changed from ca09115d76f5cf5be88f8032f70c7d818ae46db6ced2890d001fc9369b7e23ac to baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468",
+  "top_warning": "schema hash changed from baa2821854f42ae94c35f368640e5415403b48c756b3c2aaede7c77b50571468 to af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d",
   "artifact_links": [
     {
       "label": "GitHub Actions Run",
-      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/22532352837"
+      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/22556626749"
     }
   ],
   "meta": {
     "repo": "yt-codex/enbloc-morning-digest",
     "run_attempt": "1",
-    "run_id": "22532352837",
-    "sha": "c0de853a8d8d344b94bafdf09066fca2c95d9230",
+    "run_id": "22556626749",
+    "sha": "b141d6cc13bce2bc22ae202deca92cd8f28dfb01",
     "workflow": "Daily En-Bloc Digest"
   },
   "baseline_duration_seconds": 1.0,
   "detail_page": "yt-codex-enbloc-morning-digest.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-03-01T17:58:06Z"
+  "generated_at": "2026-03-02T13:14:32Z"
 }
