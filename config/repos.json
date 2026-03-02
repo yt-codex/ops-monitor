@@ -12,7 +12,9 @@
       "repo": "yt-codex/prize-alert-telegram"
     },
     {
-      "repo": "yt-codex/amenities-dashboard"
+      "repo": "yt-codex/amenities-dashboard",
+      "freshness_warn_hours": 840,
+      "freshness_fail_hours": 1680
     },
     {
       "repo": "yt-codex/enbloc-morning-digest"
