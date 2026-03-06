@@ -1,100 +1,14 @@
 {
-  "generated_at": "2026-03-06T13:06:00Z",
+  "generated_at": "2026-03-06T19:25:20Z",
   "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
   "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
   "repo_count": 4,
   "counts": {
-    "OK": 3,
-    "WARN": 1,
+    "OK": 4,
+    "WARN": 0,
     "FAIL": 0
   },
   "repos": [
-    {
-      "slug": "yt-codex-prize-alert-telegram",
-      "owner": "yt-codex",
-      "repo": "prize-alert-telegram",
-      "full_name": "yt-codex/prize-alert-telegram",
-      "branch": "main",
-      "probe_path": "ops/probe.json",
-      "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
-      "status": "OK",
-      "severity": "WARN",
-      "last_run_time": "2026-03-05T19:59:49Z",
-      "duration_seconds": 7.0,
-      "duration_human": "7s",
-      "freshness_lag_seconds": 0.0,
-      "freshness_lag_human": "0s",
-      "max_date": "2026-03-09T10:30:00Z",
-      "schema_version": null,
-      "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
-      "row_counts": {
-        "symbols_monitored": 1,
-        "prices_fetched": 1,
-        "alerts_generated": 0,
-        "alerts_sent": 0,
-        "alerts_failed": 0
-      },
-      "key_checks": [
-        {
-          "name": "config_valid",
-          "status": "OK",
-          "detail": "Config loaded and validated from config.yaml.",
-          "metric": 1.0
-        },
-        {
-          "name": "price_fetch_success_rate",
-          "status": "OK",
-          "detail": "Fetched market price data for 1/1 monitored symbol.",
-          "metric": 1.0
-        },
-        {
-          "name": "freshness_within_threshold",
-          "status": "OK",
-          "detail": "Freshness lag 0.0s is within threshold 259200.0s.",
-          "metric": 0.0
-        },
-        {
-          "name": "rules_evaluated",
-          "status": "OK",
-          "detail": "Signal evaluation completed for threshold rule.",
-          "metric": 1.0
-        },
-        {
-          "name": "telegram_send_success_rate",
-          "status": "OK",
-          "detail": "No alert generated; Telegram send not required.",
-          "metric": 1.0
-        },
-        {
-          "name": "state_persisted",
-          "status": "OK",
-          "detail": "No state write required because signal did not trigger.",
-          "metric": 1.0
-        }
-      ],
-      "warnings": [
-        "duration 7.0s exceeded baseline 2.0s"
-      ],
-      "top_warning": "duration 7.0s exceeded baseline 2.0s",
-      "artifact_links": [
-        {
-          "label": "workflow_run",
-          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22734271459"
-        }
-      ],
-      "meta": {
-        "run_id": "22734271459",
-        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22734271459",
-        "workflow": "Scheduled Ops Probe",
-        "job": "run-and-emit-probe",
-        "sha": "40ae42cb8ace9bbc7db7afc7c941f743a80cdd3a"
-      },
-      "baseline_duration_seconds": 2.0,
-      "detail_page": "yt-codex-prize-alert-telegram.html",
-      "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
-      "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-03-06T13:06:00Z"
-    },
     {
       "slug": "yt-codex-amenities-dashboard",
       "owner": "yt-codex",
@@ -196,7 +110,7 @@
       "detail_page": "yt-codex-amenities-dashboard.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-03-06T13:06:00Z"
+      "generated_at": "2026-03-06T19:25:20Z"
     },
     {
       "slug": "yt-codex-enbloc-morning-digest",
@@ -313,7 +227,91 @@
       "detail_page": "yt-codex-enbloc-morning-digest.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-03-06T13:06:00Z"
+      "generated_at": "2026-03-06T19:25:20Z"
+    },
+    {
+      "slug": "yt-codex-prize-alert-telegram",
+      "owner": "yt-codex",
+      "repo": "prize-alert-telegram",
+      "full_name": "yt-codex/prize-alert-telegram",
+      "branch": "main",
+      "probe_path": "ops/probe.json",
+      "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
+      "status": "OK",
+      "severity": "OK",
+      "last_run_time": "2026-03-06T19:23:22Z",
+      "duration_seconds": 2.0,
+      "duration_human": "2s",
+      "freshness_lag_seconds": 0.0,
+      "freshness_lag_human": "0s",
+      "max_date": "2026-03-09T10:30:00Z",
+      "schema_version": null,
+      "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
+      "row_counts": {
+        "symbols_monitored": 1,
+        "prices_fetched": 1,
+        "alerts_generated": 0,
+        "alerts_sent": 0,
+        "alerts_failed": 0
+      },
+      "key_checks": [
+        {
+          "name": "config_valid",
+          "status": "OK",
+          "detail": "Config loaded and validated from config.yaml.",
+          "metric": 1.0
+        },
+        {
+          "name": "price_fetch_success_rate",
+          "status": "OK",
+          "detail": "Fetched market price data for 1/1 monitored symbol.",
+          "metric": 1.0
+        },
+        {
+          "name": "freshness_within_threshold",
+          "status": "OK",
+          "detail": "Freshness lag 0.0s is within threshold 259200.0s.",
+          "metric": 0.0
+        },
+        {
+          "name": "rules_evaluated",
+          "status": "OK",
+          "detail": "Signal evaluation completed for threshold rule.",
+          "metric": 1.0
+        },
+        {
+          "name": "telegram_send_success_rate",
+          "status": "OK",
+          "detail": "No alert generated; Telegram send not required.",
+          "metric": 1.0
+        },
+        {
+          "name": "state_persisted",
+          "status": "OK",
+          "detail": "No state write required because signal did not trigger.",
+          "metric": 1.0
+        }
+      ],
+      "warnings": [],
+      "top_warning": "None",
+      "artifact_links": [
+        {
+          "label": "workflow_run",
+          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22778511068"
+        }
+      ],
+      "meta": {
+        "run_id": "22778511068",
+        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/22778511068",
+        "workflow": "Scheduled Ops Probe",
+        "job": "run-and-emit-probe",
+        "sha": "58a3179be43f8678b3d0824f9b96ee18ac2e4176"
+      },
+      "baseline_duration_seconds": 2.0,
+      "detail_page": "yt-codex-prize-alert-telegram.html",
+      "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
+      "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
+      "generated_at": "2026-03-06T19:25:20Z"
     },
     {
       "slug": "yt-codex-sg-developers-health-monitor",
@@ -571,7 +569,7 @@
       "detail_page": "yt-codex-sg-developers-health-monitor.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-developers-health-monitor.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-03-06T13:06:00Z"
+      "generated_at": "2026-03-06T19:25:20Z"
     }
   ]
 }
