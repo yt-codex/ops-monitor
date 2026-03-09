@@ -158,5 +158,15 @@
     "freshness_lag_seconds": 2551.0,
     "schema_hash": "d2db0913d4db66dad913f4cb12f24e584e91a00e1fe5f842599a9268608883ce",
     "top_warning": "macro.failed_items: loan_limits_granted_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint | loan_limits_utilised_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint"
+  },
+  {
+    "captured_at": "2026-03-09T19:50:46Z",
+    "last_run_time": "2026-03-09T06:43:58Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 3535.0,
+    "schema_hash": "2b35859245f8e4ea568d25c66ad80700483436c97d7e9b5d4e32b6cea7384ca6",
+    "top_warning": "None"
   }
 ]
