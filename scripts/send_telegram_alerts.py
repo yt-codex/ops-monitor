@@ -22,7 +22,9 @@ def read_summary(path: Path) -> dict[str, Any]:
 def truncate(text: str, max_len: int) -> str:
     if len(text) <= max_len:
         return text
-    return text[: max_len - 1] + "…"
+    if max_len <= 3:
+        return "." * max_len
+    return text[: max_len - 3] + "..."
 
 
 def build_message(summary: dict[str, Any]) -> str:

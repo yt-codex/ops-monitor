@@ -1,4 +1,9 @@
-from scripts.collect_probes import history_snapshot_key, median_duration, parse_repo_entry
+from scripts.collect_probes import (
+    history_snapshot_key,
+    median_duration,
+    parse_repo_entry,
+    write_overview_dashboard,
+)
 
 
 def test_history_snapshot_key_ignores_capture_time_only_changes():
@@ -102,3 +107,27 @@ def test_parse_repo_entry_preserves_app_url():
     )
 
     assert repo_cfg["app_url"] == "https://yt-codex.github.io/amenities-dashboard/web/"
+
+
+def test_write_overview_dashboard_copies_repo_index(tmp_path, monkeypatch):
+    template_path = tmp_path / "index-template.html"
+    template_path.write_text("<html><body>overview</body></html>", encoding="utf-8")
+    monkeypatch.setattr("scripts.collect_probes.OVERVIEW_DASHBOARD_PATH", template_path)
+
+    docs_dir = tmp_path / "docs"
+    docs_dir.mkdir()
+    write_overview_dashboard(docs_dir, {"generated_at": "2026-03-13T00:00:00Z"})
+
+    assert (docs_dir / "index.html").read_text(encoding="utf-8") == "<html><body>overview</body></html>"
+
+
+def test_write_overview_dashboard_falls_back_when_template_missing(tmp_path, monkeypatch):
+    missing_path = tmp_path / "missing-index.html"
+    monkeypatch.setattr("scripts.collect_probes.OVERVIEW_DASHBOARD_PATH", missing_path)
+
+    docs_dir = tmp_path / "docs"
+    docs_dir.mkdir()
+    write_overview_dashboard(docs_dir, {"generated_at": "2026-03-13T00:00:00Z"})
+
+    rendered = (docs_dir / "index.html").read_text(encoding="utf-8")
+    assert "Ops Monitor" in rendered

@@ -16,6 +16,8 @@ from typing import Any
 
 ALLOWED_STATUSES = {"OK", "WARN", "FAIL"}
 STATUS_SORT = {"FAIL": 0, "WARN": 1, "OK": 2}
+REPO_ROOT = Path(__file__).resolve().parents[1]
+OVERVIEW_DASHBOARD_PATH = REPO_ROOT / "index.html"
 
 
 def now_utc() -> datetime:
@@ -495,6 +497,15 @@ def render_index(summary: dict[str, Any]) -> str:
     return html_template("Ops Monitor", body)
 
 
+def write_overview_dashboard(docs_dir: Path, summary: dict[str, Any]) -> None:
+    output_path = docs_dir / "index.html"
+    try:
+        dashboard_html = OVERVIEW_DASHBOARD_PATH.read_text(encoding="utf-8")
+    except OSError:
+        dashboard_html = render_index(summary)
+    output_path.write_text(dashboard_html, encoding="utf-8")
+
+
 def format_html_value(value: Any) -> str:
     if value is None:
         return "null"
@@ -892,9 +903,7 @@ def main() -> int:
     write_json(docs_dir / "latest.json", summary)
 
     (docs_dir / ".nojekyll").write_text("", encoding="utf-8")
-    docs_index_path = docs_dir / "index.html"
-    if docs_index_path.exists():
-        docs_index_path.unlink()
+    write_overview_dashboard(docs_dir, summary)
     for detail in details:
         (docs_dir / f"{detail['slug']}.html").write_text(
             render_detail(detail),

@@ -240,6 +240,7 @@
       }
 
       function render(summary) {
+        var detailBasePath = window.__OPS_MONITOR_SUMMARY_BASE_PATH__ || "./docs/";
         var counts = summary && summary.counts ? summary.counts : {};
         countsEl.innerHTML = "";
         countsEl.appendChild(countCard("OK", counts.OK || 0, "OK"));
@@ -310,7 +311,7 @@
 
           var detail = document.createElement("a");
           detail.className = "detail-link";
-          detail.href = "./docs/" + text(repo.slug, "") + ".html";
+          detail.href = detailBasePath + text(repo.detail_page, text(repo.slug, "") + ".html");
           detail.textContent = "Open monitor detail";
           linkRow.appendChild(detail);
 
@@ -330,12 +331,24 @@
       }
 
       async function load() {
+        var summaryCandidates = ["./latest.json", "./docs/latest.json"];
         try {
-          var res = await fetch("./docs/latest.json", { cache: "no-store" });
-          if (!res.ok) {
-            throw new Error("HTTP " + res.status);
+          var res = null;
+          var summaryBasePath = "./docs/";
+          for (var i = 0; i < summaryCandidates.length; i += 1) {
+            var candidate = summaryCandidates[i];
+            var attempt = await fetch(candidate, { cache: "no-store" });
+            if (attempt.ok) {
+              res = attempt;
+              summaryBasePath = candidate.slice(0, candidate.lastIndexOf("/") + 1);
+              break;
+            }
+          }
+          if (!res) {
+            throw new Error("Summary JSON not found.");
           }
           var summary = await res.json();
+          window.__OPS_MONITOR_SUMMARY_BASE_PATH__ = summaryBasePath;
           generatedEl.textContent =
             "Generated: " + text(summary.generated_at, "n/a") +
             " | Apps: " + text(summary.repo_count, "0");
@@ -347,7 +360,7 @@
           var error = document.createElement("div");
           error.className = "error";
           error.textContent =
-            "Failed to load ./docs/latest.json. Run the monitor workflow and ensure docs artifacts are published.";
+            "Failed to load latest.json or docs/latest.json. Run the monitor workflow and ensure docs artifacts are published.";
           feedbackEl.appendChild(error);
         }
       }
