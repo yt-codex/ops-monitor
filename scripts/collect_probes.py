@@ -338,47 +338,150 @@ def html_template(title: str, body: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(title)}</title>
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap");
+
     :root {{
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --ok: #166534;
-      --ok-bg: #dcfce7;
-      --warn: #854d0e;
-      --warn-bg: #fef3c7;
-      --fail: #991b1b;
-      --fail-bg: #fee2e2;
-      --line: #e2e8f0;
+      color-scheme: dark;
+      --bg: #06111d;
+      --bg-deep: #08192b;
+      --surface: rgba(10, 24, 40, 0.84);
+      --surface-strong: rgba(14, 31, 50, 0.94);
+      --surface-soft: rgba(9, 20, 34, 0.76);
+      --text: #edf4ff;
+      --muted: #8fa6c4;
+      --line: rgba(156, 191, 255, 0.14);
+      --line-strong: rgba(156, 191, 255, 0.22);
+      --shadow: 0 26px 60px rgba(0, 0, 0, 0.36);
+      --ok: #7ff0b0;
+      --ok-bg: rgba(14, 86, 49, 0.42);
+      --warn: #ffd97a;
+      --warn-bg: rgba(102, 73, 11, 0.38);
+      --fail: #ffb7c6;
+      --fail-bg: rgba(112, 23, 49, 0.42);
+      --link: #8bdcff;
+      --accent: #6ed6ff;
+      --accent-soft: rgba(110, 214, 255, 0.16);
     }}
     * {{
       box-sizing: border-box;
     }}
     body {{
       margin: 0;
-      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.4;
+      background:
+        radial-gradient(720px 380px at 8% -8%, rgba(62, 102, 182, 0.34) 0%, transparent 62%),
+        radial-gradient(620px 340px at 92% 0%, rgba(29, 195, 214, 0.2) 0%, transparent 58%),
+        linear-gradient(180deg, #07111c 0%, var(--bg) 50%, #050d17 100%);
+      line-height: 1.55;
+      min-height: 100vh;
     }}
     main {{
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 24px 16px 40px;
+      padding: 34px 18px 56px;
     }}
     h1 {{
-      margin: 0 0 8px;
-      font-size: 1.5rem;
+      margin: 0;
+      font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+    }}
+    h2 {{
+      margin: 0 0 14px;
+      font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
     }}
     p {{
       color: var(--muted);
       margin: 0 0 16px;
     }}
     .card {{
-      background: var(--card);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+        var(--surface);
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 22px;
       overflow: hidden;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }}
+    .hero-card {{
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 18px;
+      padding: 24px;
+      border: 1px solid var(--line-strong);
+      background:
+        radial-gradient(540px 220px at 100% 0%, rgba(110, 214, 255, 0.18) 0%, transparent 62%),
+        radial-gradient(480px 240px at 0% 0%, rgba(84, 120, 255, 0.12) 0%, transparent 58%),
+        linear-gradient(180deg, rgba(14, 31, 50, 0.96), rgba(8, 20, 35, 0.94));
+      box-shadow: var(--shadow);
+    }}
+    .hero-card::after {{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(125deg, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(transparent, rgba(255, 255, 255, 0.015));
+      pointer-events: none;
+    }}
+    .hero-inner,
+    .meta-grid,
+    .section-block {{
+      position: relative;
+      z-index: 1;
+    }}
+    .eyebrow {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 220, 255, 0.18);
+      background: rgba(110, 214, 255, 0.1);
+      color: #c8ecff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }}
+    .hero-copy {{
+      max-width: 66ch;
+      margin-top: 14px;
+      color: #b6cae5;
+      font-size: 1rem;
+    }}
+    .top-links {{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }}
+    .top-links a {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(139, 220, 255, 0.18);
+      background: rgba(110, 214, 255, 0.09);
+      color: var(--link);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }}
+    .top-links a:hover {{
+      text-decoration: none;
+      border-color: rgba(139, 220, 255, 0.36);
+      background: rgba(110, 214, 255, 0.16);
+      transform: translateY(-1px);
     }}
     table {{
       width: 100%;
@@ -386,25 +489,34 @@ def html_template(title: str, body: str) -> str:
     }}
     th, td {{
       border-bottom: 1px solid var(--line);
-      padding: 10px 12px;
+      padding: 13px 14px;
       text-align: left;
       vertical-align: top;
       font-size: 0.95rem;
     }}
     th {{
-      background: #f1f5f9;
+      background: rgba(255, 255, 255, 0.03);
       font-weight: 600;
+      color: #dbe8fb;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
     }}
     tr:last-child td {{
       border-bottom: none;
     }}
+    tbody tr:hover td {{
+      background: rgba(255, 255, 255, 0.015);
+    }}
     .badge {{
       display: inline-block;
       border-radius: 999px;
-      padding: 2px 8px;
-      font-size: 0.78rem;
+      padding: 4px 10px;
+      font-size: 0.76rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.06em;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
     }}
     .OK {{
       color: var(--ok);
@@ -419,9 +531,9 @@ def html_template(title: str, body: str) -> str:
       background: var(--fail-bg);
     }}
     code {{
-      background: #e2e8f0;
-      border-radius: 4px;
-      padding: 1px 4px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 4px 8px;
       font-size: 0.9em;
       display: inline-block;
       max-width: 100%;
@@ -432,29 +544,29 @@ def html_template(title: str, body: str) -> str:
     .meta-grid {{
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 14px;
+      margin-bottom: 20px;
     }}
     .meta-card {{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 10px 12px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(156, 191, 255, 0.1);
+      border-radius: 18px;
+      padding: 14px 15px;
       overflow-wrap: anywhere;
     }}
     .meta-title {{
       font-size: 0.76rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.08em;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }}
     .help {{
       cursor: help;
-      border-bottom: 1px dotted #94a3b8;
+      border-bottom: 1px dotted rgba(143, 166, 196, 0.7);
     }}
     a {{
-      color: #0f766e;
+      color: var(--link);
       text-decoration: none;
     }}
     a:hover {{
@@ -464,6 +576,9 @@ def html_template(title: str, body: str) -> str:
       margin: 0;
       padding-left: 20px;
     }}
+    li {{
+      margin-bottom: 8px;
+    }}
     .subtle {{
       color: var(--muted);
       font-size: 0.9rem;
@@ -472,6 +587,23 @@ def html_template(title: str, body: str) -> str:
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
       font-size: 0.85rem;
       word-break: break-word;
+    }}
+    .section-block {{
+      margin-top: 22px;
+    }}
+    .section-block > h2 {{
+      margin-bottom: 14px;
+    }}
+    @media (max-width: 760px) {{
+      main {{
+        padding: 22px 14px 36px;
+      }}
+      .hero-card {{
+        padding: 18px;
+      }}
+      .meta-grid {{
+        grid-template-columns: 1fr;
+      }}
     }}
   </style>
 </head>
@@ -597,9 +729,17 @@ def render_detail(detail: dict[str, Any]) -> str:
     )
 
     body = (
-        f"<p><a href=\"{escape(dashboard_home_url, quote=True)}\">Back to dashboard</a> | "
-        f"<a href=\"{escape(detail['slug'])}.json\">Raw JSON</a></p>"
+        "<section class=\"hero-card\">"
+        "<div class=\"hero-inner\">"
+        "<div class=\"top-links\">"
+        f"<a href=\"{escape(dashboard_home_url, quote=True)}\">Back to dashboard</a>"
+        f"<a href=\"{escape(detail['slug'])}.json\">Raw JSON</a>"
+        "</div>"
+        "<div class=\"eyebrow\">Repository Health Detail</div>"
         f"<h1>{escape(detail['full_name'])}</h1>"
+        "<p class=\"hero-copy\">A single-pane operational snapshot covering probe status, freshness, schema signals, emitted metrics, and related artifacts.</p>"
+        "</div>"
+        "</section>"
         "<div class=\"meta-grid\">"
         f"<div class=\"meta-card\"><div class=\"meta-title\">Severity</div>"
         f"<span class=\"badge {escape(detail['severity'])}\">{escape(detail['severity'])}</span></div>"
@@ -613,16 +753,21 @@ def render_detail(detail: dict[str, Any]) -> str:
         f"<div class=\"meta-card\"><div class=\"meta-title\">Probe</div>"
         f"<a href=\"{escape(detail['probe_source_url'])}\">{escape(detail['probe_source_url'])}</a></div>"
         "</div>"
-        "<h2>Warnings</h2>"
+        "<section class=\"section-block\"><h2>Warnings</h2>"
         f"{warnings_html}"
-        "<h2>Probe Meta</h2>"
+        "</section>"
+        "<section class=\"section-block\"><h2>Probe Meta</h2>"
         f"{meta_html}"
-        "<h2>Key Checks</h2>"
+        "</section>"
+        "<section class=\"section-block\"><h2>Key Checks</h2>"
         f"{checks_html}"
-        "<h2>Row Counts</h2>"
+        "</section>"
+        "<section class=\"section-block\"><h2>Row Counts</h2>"
         f"{row_counts_html}"
-        "<h2>Artifacts</h2>"
+        "</section>"
+        "<section class=\"section-block\"><h2>Artifacts</h2>"
         f"{artifacts_html}"
+        "</section>"
     )
     return html_template(f"Ops Monitor - {detail['full_name']}", body)
 
