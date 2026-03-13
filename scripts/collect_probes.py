@@ -210,11 +210,35 @@ def normalize_row_counts(items: Any) -> dict[str, int | float]:
     return normalized
 
 
+def history_snapshot_key(snapshot: dict[str, Any]) -> tuple[Any, ...]:
+    return (
+        str(snapshot.get("last_run_time") or "").strip(),
+        str(snapshot.get("status") or "").upper().strip(),
+        str(snapshot.get("severity") or "").upper().strip(),
+        to_float(snapshot.get("duration_seconds")),
+        to_float(snapshot.get("freshness_lag_seconds")),
+        str(snapshot.get("schema_hash") or "").strip(),
+        str(snapshot.get("top_warning") or "").strip(),
+    )
+
+
+def duration_baseline_key(row: dict[str, Any]) -> tuple[Any, ...]:
+    last_run_time = str(row.get("last_run_time") or "").strip()
+    if last_run_time:
+        return ("last_run_time", last_run_time)
+    return ("snapshot",) + history_snapshot_key(row)
+
+
 def median_duration(history: list[dict[str, Any]]) -> float | None:
     values: list[float] = []
+    seen: set[tuple[Any, ...]] = set()
     for row in history:
         if str(row.get("status", "")).upper() != "OK":
             continue
+        identity = duration_baseline_key(row)
+        if identity in seen:
+            continue
+        seen.add(identity)
         duration = to_float(row.get("duration_seconds"))
         if duration is not None and duration > 0:
             values.append(duration)
@@ -752,7 +776,7 @@ def repo_detail(
         "schema_hash": schema_hash,
         "top_warning": top_warning,
     }
-    if not history or history[-1] != snapshot:
+    if not history or history_snapshot_key(history[-1]) != history_snapshot_key(snapshot):
         history.append(snapshot)
     history = history[-max(1, retention) :]
 
