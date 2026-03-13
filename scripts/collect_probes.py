@@ -323,6 +323,11 @@ def run_url(owner: str, repo: str, run_id: Any) -> str | None:
     return f"https://github.com/{owner}/{repo}/actions/runs/{run_id}"
 
 
+def normalize_optional_url(value: Any) -> str | None:
+    text = str(value or "").strip()
+    return text or None
+
+
 def html_template(title: str, body: str) -> str:
     return f"""<!doctype html>
 <html lang="en">
@@ -640,6 +645,7 @@ def parse_repo_entry(entry: dict[str, Any], defaults: dict[str, Any]) -> dict[st
         "slug": slugify_repo(entry.get("slug") or full_name),
         "branch": branch,
         "probe_path": probe_path,
+        "app_url": normalize_optional_url(entry.get("app_url")),
         "warn_lag_seconds": warn_hours * 3600 if warn_hours is not None else None,
         "fail_lag_seconds": fail_hours * 3600 if fail_hours is not None else None,
         "duration_warn_multiplier": duration_multiplier,
@@ -743,6 +749,7 @@ def repo_detail(
         "branch": branch,
         "probe_path": probe_path,
         "probe_source_url": probe_url(owner, repo, branch, probe_path),
+        "app_url": repo_cfg.get("app_url"),
         "status": status,
         "severity": severity,
         "last_run_time": iso_utc(last_run),

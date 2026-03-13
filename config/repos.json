@@ -13,6 +13,7 @@
     },
     {
       "repo": "yt-codex/amenities-dashboard",
+      "app_url": "https://yt-codex.github.io/amenities-dashboard/web/",
       "freshness_warn_hours": 840,
       "freshness_fail_hours": 1680
     },
@@ -20,7 +21,8 @@
       "repo": "yt-codex/enbloc-morning-digest"
     },
     {
-      "repo": "yt-codex/sg-developers-health-monitor"
+      "repo": "yt-codex/sg-developers-health-monitor",
+      "app_url": "https://yt-codex.github.io/sg-developers-health-monitor/index.html"
     }
   ]
 }

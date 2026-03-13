@@ -39,7 +39,7 @@ In each monitored repo:
 Edit [repos.json](config/repos.json):
 
 - Replace placeholder entries with real `owner/repo`.
-- Optionally override per-repo `branch`, `probe_path`, `freshness_warn_hours`, `freshness_fail_hours`, and `duration_warn_multiplier`.
+- Optionally override per-repo `branch`, `probe_path`, `freshness_warn_hours`, `freshness_fail_hours`, `duration_warn_multiplier`, and `app_url`.
 
 ## 3) GitHub settings/secrets
 

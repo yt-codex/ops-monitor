@@ -146,6 +146,15 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
+    .link-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .link-row .detail-link {
+      margin-top: 0;
+    }
     .empty,
     .error {
       margin-top: 16px;
@@ -179,6 +188,10 @@
   <script>
     (function () {
       var STATUS_ORDER = { FAIL: 0, WARN: 1, OK: 2 };
+      var APP_URLS = {
+        "yt-codex/amenities-dashboard": "https://yt-codex.github.io/amenities-dashboard/web/",
+        "yt-codex/sg-developers-health-monitor": "https://yt-codex.github.io/sg-developers-health-monitor/index.html"
+      };
       var countsEl = document.getElementById("counts");
       var reposEl = document.getElementById("repos");
       var feedbackEl = document.getElementById("feedback");
@@ -292,11 +305,25 @@
           warning.textContent = "Top warning: " + text(repo.top_warning, "none");
           card.appendChild(warning);
 
+          var linkRow = document.createElement("div");
+          linkRow.className = "link-row";
+
           var detail = document.createElement("a");
           detail.className = "detail-link";
           detail.href = "./docs/" + text(repo.slug, "") + ".html";
-          detail.textContent = "Open app detail";
-          card.appendChild(detail);
+          detail.textContent = "Open monitor detail";
+          linkRow.appendChild(detail);
+
+          var appUrl = text(repo.app_url, "") || APP_URLS[text(repo.full_name, "")];
+          if (appUrl) {
+            var app = document.createElement("a");
+            app.className = "detail-link";
+            app.href = appUrl;
+            app.textContent = "Open project site";
+            linkRow.appendChild(app);
+          }
+
+          card.appendChild(linkRow);
 
           reposEl.appendChild(card);
         });

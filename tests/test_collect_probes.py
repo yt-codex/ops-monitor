@@ -1,4 +1,4 @@
-from scripts.collect_probes import history_snapshot_key, median_duration
+from scripts.collect_probes import history_snapshot_key, median_duration, parse_repo_entry
 
 
 def test_history_snapshot_key_ignores_capture_time_only_changes():
@@ -84,3 +84,21 @@ def test_median_duration_dedupes_repeated_captures_of_same_run():
     ]
 
     assert median_duration(history) == 43.0
+
+
+def test_parse_repo_entry_preserves_app_url():
+    repo_cfg = parse_repo_entry(
+        {
+            "repo": "yt-codex/amenities-dashboard",
+            "app_url": "https://yt-codex.github.io/amenities-dashboard/web/",
+        },
+        {
+            "branch": "main",
+            "probe_path": "ops/probe.json",
+            "freshness_warn_hours": 24,
+            "freshness_fail_hours": 72,
+            "duration_warn_multiplier": 2.0,
+        },
+    )
+
+    assert repo_cfg["app_url"] == "https://yt-codex.github.io/amenities-dashboard/web/"
