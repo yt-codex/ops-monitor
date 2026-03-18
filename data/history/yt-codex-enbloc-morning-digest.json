@@ -248,5 +248,15 @@
     "freshness_lag_seconds": 417.0,
     "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-03-18T18:32:38Z",
+    "last_run_time": "2026-03-18T11:48:08Z",
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": 42.0,
+    "freshness_lag_seconds": 581.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "digest workload exited with code 1"
   }
 ]
