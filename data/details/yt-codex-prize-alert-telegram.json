@@ -9,12 +9,12 @@
   "app_url": null,
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-03-18T18:09:15Z",
+  "last_run_time": "2026-03-19T18:00:07Z",
   "duration_seconds": 1.0,
   "duration_human": "1s",
   "freshness_lag_seconds": 0.0,
   "freshness_lag_human": "0s",
-  "max_date": "2026-03-19T10:30:00Z",
+  "max_date": "2026-03-23T10:30:00Z",
   "schema_version": null,
   "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
   "row_counts": {
@@ -67,19 +67,19 @@
   "artifact_links": [
     {
       "label": "workflow_run",
-      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23259841594"
+      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23309378917"
     }
   ],
   "meta": {
-    "run_id": "23259841594",
-    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23259841594",
+    "run_id": "23309378917",
+    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23309378917",
     "workflow": "Scheduled Ops Probe",
     "job": "run-and-emit-probe",
-    "sha": "9281b5e32e9a336d2bebd2b4cb1cf3d662415f3f"
+    "sha": "c3ecf03824ea387fccaf174ebc17a0c7773172e6"
   },
   "baseline_duration_seconds": 1.0,
   "detail_page": "yt-codex-prize-alert-telegram.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-03-18T18:32:38Z"
+  "generated_at": "2026-03-19T18:30:14Z"
 }
