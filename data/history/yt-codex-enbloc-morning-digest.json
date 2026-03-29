@@ -358,5 +358,15 @@
     "freshness_lag_seconds": 655.0,
     "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-03-29T18:00:30Z",
+    "last_run_time": "2026-03-29T03:43:29Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 2.0,
+    "freshness_lag_seconds": 329.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "None"
   }
 ]
