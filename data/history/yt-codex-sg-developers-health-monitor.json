@@ -368,5 +368,15 @@
     "freshness_lag_seconds": 17.0,
     "schema_hash": "1b10b729bb226fe24a49738c43d2f5ae736481e19cb4f54ba63825755e1f5b37",
     "top_warning": "news.feed_health: meta.feeds is empty"
+  },
+  {
+    "captured_at": "2026-03-30T18:35:40Z",
+    "last_run_time": "2026-03-30T14:29:35Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 17.0,
+    "schema_hash": "4f77923c6d48cf8c0949dcefe9fe9b958729c16ac3e1dd4eebd4983293118319",
+    "top_warning": "None"
   }
 ]

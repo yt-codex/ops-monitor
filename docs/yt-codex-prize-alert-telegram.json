@@ -8,20 +8,20 @@
   "probe_source_url": "https://github.com/yt-codex/prize-alert-telegram/blob/main/ops/probe.json",
   "app_url": null,
   "status": "OK",
-  "severity": "OK",
-  "last_run_time": "2026-03-29T17:47:07Z",
-  "duration_seconds": 1.0,
-  "duration_human": "1s",
+  "severity": "WARN",
+  "last_run_time": "2026-03-30T18:04:13Z",
+  "duration_seconds": 3.0,
+  "duration_human": "3s",
   "freshness_lag_seconds": 0.0,
   "freshness_lag_human": "0s",
-  "max_date": "2026-03-30T10:30:00Z",
+  "max_date": "2026-04-02T10:30:00Z",
   "schema_version": null,
   "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
   "row_counts": {
     "symbols_monitored": 1,
     "prices_fetched": 1,
-    "alerts_generated": 0,
-    "alerts_sent": 0,
+    "alerts_generated": 1,
+    "alerts_sent": 1,
     "alerts_failed": 0
   },
   "key_checks": [
@@ -52,34 +52,36 @@
     {
       "name": "telegram_send_success_rate",
       "status": "OK",
-      "detail": "No alert generated; Telegram send not required.",
+      "detail": "Telegram alert delivered.",
       "metric": 1.0
     },
     {
       "name": "state_persisted",
       "status": "OK",
-      "detail": "No state write required because signal did not trigger.",
+      "detail": "State persisted with latest alerted draw id.",
       "metric": 1.0
     }
   ],
-  "warnings": [],
-  "top_warning": "None",
+  "warnings": [
+    "duration 3.0s exceeded baseline 1.0s"
+  ],
+  "top_warning": "duration 3.0s exceeded baseline 1.0s",
   "artifact_links": [
     {
       "label": "workflow_run",
-      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23715178129"
+      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23759917592"
     }
   ],
   "meta": {
-    "run_id": "23715178129",
-    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23715178129",
+    "run_id": "23759917592",
+    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/23759917592",
     "workflow": "Scheduled Ops Probe",
     "job": "run-and-emit-probe",
-    "sha": "a98f74cbc35588bb23ca1333cd59b246c5a6445d"
+    "sha": "ed4de166825c959c0ef49f18c6201e2105abec18"
   },
-  "baseline_duration_seconds": 1.5,
+  "baseline_duration_seconds": 1.0,
   "detail_page": "yt-codex-prize-alert-telegram.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-03-29T18:00:30Z"
+  "generated_at": "2026-03-30T18:35:40Z"
 }
