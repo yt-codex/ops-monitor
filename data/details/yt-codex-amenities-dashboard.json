@@ -7,24 +7,24 @@
   "probe_path": "ops/probe.json",
   "probe_source_url": "https://github.com/yt-codex/amenities-dashboard/blob/main/ops/probe.json",
   "app_url": "https://yt-codex.github.io/amenities-dashboard/web/",
-  "status": "OK",
-  "severity": "OK",
-  "last_run_time": "2026-03-01T05:12:19Z",
-  "duration_seconds": 0.0,
-  "duration_human": "0s",
-  "freshness_lag_seconds": 88223.811238,
-  "freshness_lag_human": "1d 0h",
-  "max_date": "2026-02-28T04:41:56Z",
+  "status": "WARN",
+  "severity": "WARN",
+  "last_run_time": "2026-04-01T06:17:59Z",
+  "duration_seconds": 157.0,
+  "duration_human": "2m 37s",
+  "freshness_lag_seconds": 1.099147,
+  "freshness_lag_human": "1s",
+  "max_date": "2026-04-01T06:17:59Z",
   "schema_version": "1.0",
   "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
   "row_counts": {
     "denoms_vintages": 5,
-    "amenities_snapshots": 1,
-    "amenities_rows_sz": 856,
-    "amenities_rows_pa": 234,
+    "amenities_snapshots": 2,
+    "amenities_rows_sz": 858,
+    "amenities_rows_pa": 235,
     "schools_primary_points": 179,
     "schools_secondary_points": 133,
-    "overpass_points_total": 1785
+    "overpass_points_total": 1786
   },
   "key_checks": [
     {
@@ -40,17 +40,34 @@
     {
       "name": "moe_datagov_fetch",
       "status": "OK",
-      "detail": "Amenities refresh not due this month."
+      "detail": "MOE datastore fetch succeeded."
     },
     {
       "name": "onemap_auth_geocode",
       "status": "OK",
-      "detail": "OneMap geocoding not due this month."
+      "detail": "OneMap auth/geocode completed with measured success rate.",
+      "metric": {
+        "eligible": 312,
+        "resolved": 312,
+        "unresolved": 0,
+        "success_rate": 1.0
+      }
     },
     {
       "name": "overpass_fetch",
-      "status": "OK",
-      "detail": "Overpass fetch not due this month."
+      "status": "WARN",
+      "detail": "Overpass completed after retries/failover.",
+      "metric": {
+        "categories_found": [
+          "childcare_preschool",
+          "dental",
+          "eldercare",
+          "gp_clinics",
+          "supermarkets"
+        ],
+        "retries": 9,
+        "endpoint_switches": 1
+      }
     },
     {
       "name": "denom_tests",
@@ -60,7 +77,7 @@
     {
       "name": "amenity_tests",
       "status": "OK",
-      "detail": "Amenity tests skipped because refresh is not due."
+      "detail": "Amenity tests passed."
     },
     {
       "name": "output_write",
@@ -68,37 +85,39 @@
       "detail": "Output files written and readable."
     }
   ],
-  "warnings": [],
-  "top_warning": "None",
+  "warnings": [
+    "Overpass endpoint instability observed (retries/failover occurred)."
+  ],
+  "top_warning": "Overpass endpoint instability observed (retries/failover occurred).",
   "artifact_links": [
     {
       "label": "workflow_run",
-      "url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/22536562430"
+      "url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/23834819049"
     },
     {
       "label": "denoms_index",
-      "url": "https://github.com/yt-codex/amenities-dashboard/blob/5e988b8df21fe7163c84ee7aacabac5dd66e74a0/web/data/denoms_index.json"
+      "url": "https://github.com/yt-codex/amenities-dashboard/blob/51c2d2096e643471093f94eb563cb5e9304aede0/web/data/denoms_index.json"
     },
     {
       "label": "amenities_index",
-      "url": "https://github.com/yt-codex/amenities-dashboard/blob/5e988b8df21fe7163c84ee7aacabac5dd66e74a0/web/data/amenities_index.json"
+      "url": "https://github.com/yt-codex/amenities-dashboard/blob/51c2d2096e643471093f94eb563cb5e9304aede0/web/data/amenities_index.json"
     },
     {
       "label": "ops_probe",
-      "url": "https://github.com/yt-codex/amenities-dashboard/blob/5e988b8df21fe7163c84ee7aacabac5dd66e74a0/ops/probe.json"
+      "url": "https://github.com/yt-codex/amenities-dashboard/blob/51c2d2096e643471093f94eb563cb5e9304aede0/ops/probe.json"
     }
   ],
   "meta": {
     "repo": "yt-codex/amenities-dashboard",
-    "run_id": "22536562430",
-    "run_url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/22536562430",
+    "run_id": "23834819049",
+    "run_url": "https://github.com/yt-codex/amenities-dashboard/actions/runs/23834819049",
     "workflow": "Refresh Dashboard Data",
     "job": "refresh",
-    "sha": "5e988b8df21fe7163c84ee7aacabac5dd66e74a0"
+    "sha": "51c2d2096e643471093f94eb563cb5e9304aede0"
   },
   "baseline_duration_seconds": 24.0,
   "detail_page": "yt-codex-amenities-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-03-31T18:33:48Z"
+  "generated_at": "2026-04-01T18:33:44Z"
 }
