@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-02-28T05:26:01Z",
-    "last_run_time": null,
-    "status": "FAIL",
-    "severity": "FAIL",
-    "duration_seconds": null,
-    "freshness_lag_seconds": null,
-    "schema_hash": null,
-    "top_warning": "Probe fetch failed: http 403"
-  },
-  {
     "captured_at": "2026-02-28T05:52:06Z",
     "last_run_time": "2026-02-28T05:22:54Z",
     "status": "WARN",
@@ -396,6 +386,16 @@
     "severity": "OK",
     "duration_seconds": 0.0,
     "freshness_lag_seconds": 130.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-04-02T18:32:10Z",
+    "last_run_time": "2026-04-02T03:30:47Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 0.0,
+    "freshness_lag_seconds": 1221.0,
     "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
   }
