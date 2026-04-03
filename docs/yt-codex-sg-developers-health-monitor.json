@@ -251,8 +251,9 @@
     }
   },
   "baseline_duration_seconds": null,
+  "baseline_duration_sample_count": 0,
   "detail_page": "yt-codex-sg-developers-health-monitor.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-developers-health-monitor.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-04-03T01:42:11Z"
+  "generated_at": "2026-04-03T01:52:12Z"
 }

@@ -8,7 +8,7 @@
   "probe_source_url": "https://github.com/yt-codex/amenities-dashboard/blob/main/ops/probe.json",
   "app_url": "https://yt-codex.github.io/amenities-dashboard/web/",
   "status": "OK",
-  "severity": "WARN",
+  "severity": "OK",
   "last_run_time": "2026-04-01T06:17:59Z",
   "duration_seconds": 157.0,
   "duration_human": "2m 37s",
@@ -85,10 +85,8 @@
       "detail": "Output files written and readable."
     }
   ],
-  "warnings": [
-    "duration 157.0s exceeded baseline 24.0s"
-  ],
-  "top_warning": "duration 157.0s exceeded baseline 24.0s",
+  "warnings": [],
+  "top_warning": "None",
   "artifact_links": [
     {
       "label": "workflow_run",
@@ -103,9 +101,10 @@
     "job": null,
     "sha": null
   },
-  "baseline_duration_seconds": 24.0,
+  "baseline_duration_seconds": null,
+  "baseline_duration_sample_count": 2,
   "detail_page": "yt-codex-amenities-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-04-03T01:42:11Z"
+  "generated_at": "2026-04-03T01:52:12Z"
 }
