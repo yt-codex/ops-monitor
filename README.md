@@ -39,7 +39,7 @@ In each monitored repo:
 Edit [repos.json](config/repos.json):
 
 - Replace placeholder entries with real `owner/repo`.
-- Optionally override per-repo `branch`, `probe_path`, `freshness_warn_hours`, `freshness_fail_hours`, `duration_warn_multiplier`, and `app_url`.
+- Optionally override per-repo `branch`, `probe_path`, `freshness_warn_hours`, `freshness_fail_hours`, `duration_warn_multiplier`, `duration_baseline_min_seconds`, `duration_baseline_min_samples`, and `app_url`.
 
 ## 3) GitHub settings/secrets
 
@@ -63,6 +63,7 @@ This repo already includes [monitor.yml](.github/workflows/monitor.yml), which:
 1. Runs on schedule/manual dispatch.
 2. Fetches probes and renders `docs/index.html` + `docs/<repo>.html`.
 3. Writes `data/history/*.json` for baseline/severity computation.
+   - Duration baselines are computed from prior **meaningful** OK runs only, with configurable minimum runtime and minimum sample count, so skipped/no-op days do not drag baselines down.
 4. Commits generated outputs.
 5. Deploys `docs/` via GitHub Pages Actions.
 

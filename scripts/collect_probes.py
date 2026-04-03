@@ -18,6 +18,8 @@ ALLOWED_STATUSES = {"OK", "WARN", "FAIL"}
 STATUS_SORT = {"FAIL": 0, "WARN": 1, "OK": 2}
 REPO_ROOT = Path(__file__).resolve().parents[1]
 OVERVIEW_DASHBOARD_PATH = REPO_ROOT / "index.html"
+DEFAULT_DURATION_BASELINE_MIN_SECONDS = 5.0
+DEFAULT_DURATION_BASELINE_MIN_SAMPLES = 3
 
 
 def now_utc() -> datetime:
@@ -231,7 +233,12 @@ def duration_baseline_key(row: dict[str, Any]) -> tuple[Any, ...]:
     return ("snapshot",) + history_snapshot_key(row)
 
 
-def median_duration(history: list[dict[str, Any]]) -> float | None:
+def duration_baseline_stats(
+    history: list[dict[str, Any]],
+    *,
+    min_duration_seconds: float,
+    min_samples: int,
+) -> tuple[float | None, int]:
     values: list[float] = []
     seen: set[tuple[Any, ...]] = set()
     for row in history:
@@ -242,11 +249,11 @@ def median_duration(history: list[dict[str, Any]]) -> float | None:
             continue
         seen.add(identity)
         duration = to_float(row.get("duration_seconds"))
-        if duration is not None and duration > 0:
+        if duration is not None and duration >= min_duration_seconds:
             values.append(duration)
-    if not values:
-        return None
-    return statistics.median(values)
+    if len(values) < max(1, min_samples):
+        return None, len(values)
+    return statistics.median(values), len(values)
 
 
 def severity_for(
@@ -787,12 +794,22 @@ def parse_repo_entry(entry: dict[str, Any], defaults: dict[str, Any]) -> dict[st
     warn_hours = to_int(entry.get("freshness_warn_hours"))
     fail_hours = to_int(entry.get("freshness_fail_hours"))
     duration_multiplier = to_float(entry.get("duration_warn_multiplier"))
+    duration_baseline_min_seconds = to_float(entry.get("duration_baseline_min_seconds"))
+    duration_baseline_min_samples = to_int(entry.get("duration_baseline_min_samples"))
     if warn_hours is None:
         warn_hours = to_int(defaults.get("freshness_warn_hours"))
     if fail_hours is None:
         fail_hours = to_int(defaults.get("freshness_fail_hours"))
     if duration_multiplier is None:
         duration_multiplier = to_float(defaults.get("duration_warn_multiplier"))
+    if duration_baseline_min_seconds is None:
+        duration_baseline_min_seconds = to_float(defaults.get("duration_baseline_min_seconds"))
+    if duration_baseline_min_seconds is None:
+        duration_baseline_min_seconds = DEFAULT_DURATION_BASELINE_MIN_SECONDS
+    if duration_baseline_min_samples is None:
+        duration_baseline_min_samples = to_int(defaults.get("duration_baseline_min_samples"))
+    if duration_baseline_min_samples is None:
+        duration_baseline_min_samples = DEFAULT_DURATION_BASELINE_MIN_SAMPLES
 
     return {
         "owner": owner,
@@ -805,6 +822,8 @@ def parse_repo_entry(entry: dict[str, Any], defaults: dict[str, Any]) -> dict[st
         "warn_lag_seconds": warn_hours * 3600 if warn_hours is not None else None,
         "fail_lag_seconds": fail_hours * 3600 if fail_hours is not None else None,
         "duration_warn_multiplier": duration_multiplier,
+        "duration_baseline_min_seconds": duration_baseline_min_seconds,
+        "duration_baseline_min_samples": duration_baseline_min_samples,
     }
 
 
@@ -871,7 +890,11 @@ def repo_detail(
     if not isinstance(history, list):
         history = []
 
-    baseline = median_duration(history)
+    baseline, baseline_sample_count = duration_baseline_stats(
+        history,
+        min_duration_seconds=repo_cfg["duration_baseline_min_seconds"],
+        min_samples=repo_cfg["duration_baseline_min_samples"],
+    )
     severity, severity_reasons = severity_for(
         base_status=status,
         lag_seconds=lag_seconds,
@@ -923,6 +946,7 @@ def repo_detail(
         "artifact_links": artifact_links,
         "meta": meta,
         "baseline_duration_seconds": baseline,
+        "baseline_duration_sample_count": baseline_sample_count,
         "detail_page": detail_filename,
         "detail_url": detail_url,
         "dashboard_home_url": dashboard_home_url,

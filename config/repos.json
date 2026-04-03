@@ -5,7 +5,9 @@
     "probe_path": "ops/probe.json",
     "freshness_warn_hours": 24,
     "freshness_fail_hours": 72,
-    "duration_warn_multiplier": 2.0
+    "duration_warn_multiplier": 2.0,
+    "duration_baseline_min_seconds": 5,
+    "duration_baseline_min_samples": 3
   },
   "repos": [
     {
