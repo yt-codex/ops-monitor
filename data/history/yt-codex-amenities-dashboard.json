@@ -258,5 +258,15 @@
     "freshness_lag_seconds": 1.099147,
     "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
     "top_warning": "Overpass endpoint instability observed (retries/failover occurred)."
+  },
+  {
+    "captured_at": "2026-04-03T01:42:11Z",
+    "last_run_time": "2026-04-01T06:17:59Z",
+    "status": "OK",
+    "severity": "WARN",
+    "duration_seconds": 157.0,
+    "freshness_lag_seconds": 155620.351776,
+    "schema_hash": "641d6de65cd68382d614dcb72f59b401b7be2ddce1cae5221dc8b44b81275ab1",
+    "top_warning": "duration 157.0s exceeded baseline 24.0s"
   }
 ]
