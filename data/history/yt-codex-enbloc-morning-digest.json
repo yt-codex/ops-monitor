@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-02T13:18:49Z",
-    "last_run_time": "2026-03-02T13:17:42Z",
-    "status": "WARN",
-    "severity": "WARN",
-    "duration_seconds": 0.0,
-    "freshness_lag_seconds": 281.0,
-    "schema_hash": "f5b61aac2602b381f517e9c2a48ec212152f5a74b3a43cddc13359b0dfbb6164",
-    "top_warning": "schema hash changed from af033d15ba3ba228a04d501f9ed1125f26d48f7da54d206fad34119ded86e25d to f5b61aac2602b381f517e9c2a48ec212152f5a74b3a43cddc13359b0dfbb6164"
-  },
-  {
     "captured_at": "2026-03-02T13:33:40Z",
     "last_run_time": "2026-03-02T13:32:58Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": 1.0,
     "freshness_lag_seconds": 352.0,
     "schema_hash": "20e12f3ccf0310b56b3f86943560a1d2222af7d819c6da981043c5fd3bab7777",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-04-10T18:30:29Z",
+    "last_run_time": "2026-04-10T03:46:07Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 1.0,
+    "freshness_lag_seconds": 667.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
   }
 ]
