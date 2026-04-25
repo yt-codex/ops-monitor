@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-18T18:32:38Z",
-    "last_run_time": "2026-03-18T11:48:08Z",
-    "status": "FAIL",
-    "severity": "FAIL",
-    "duration_seconds": 42.0,
-    "freshness_lag_seconds": 581.0,
-    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
-    "top_warning": "digest workload exited with code 1"
-  },
-  {
     "captured_at": "2026-03-19T18:30:14Z",
     "last_run_time": "2026-03-19T11:33:36Z",
     "status": "OK",
@@ -396,6 +386,16 @@
     "severity": "OK",
     "duration_seconds": 2.0,
     "freshness_lag_seconds": 95.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-04-25T18:07:25Z",
+    "last_run_time": "2026-04-25T03:38:31Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 1.0,
+    "freshness_lag_seconds": 1856.0,
     "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
   }

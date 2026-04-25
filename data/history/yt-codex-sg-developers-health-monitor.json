@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-17T18:32:50Z",
-    "last_run_time": "2026-03-17T05:10:40Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 3777.0,
-    "schema_hash": "60d39f1722fbbbe410475ce04a17133e9987f44a957e236c88f3a312aa6538de",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-03-18T18:32:38Z",
     "last_run_time": "2026-03-18T05:14:50Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 88.0,
     "schema_hash": "f82f2bda4fe606569c4fbd194ed808ab2d473081769140e21101764aaeaadbdc",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-04-25T18:07:25Z",
+    "last_run_time": "2026-04-25T10:38:31Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 67.0,
+    "schema_hash": "82b97168a4267cbad6d6216760ef75cd0c0feb080bf1f47569bb3f7a3760fdfb",
+    "top_warning": "macro.failed_items: loan_limits_granted_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint | loan_limits_utilised_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint"
   }
 ]

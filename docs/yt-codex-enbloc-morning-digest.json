@@ -9,12 +9,12 @@
   "app_url": null,
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-04-24T03:56:35Z",
-  "duration_seconds": 2.0,
-  "duration_human": "2s",
-  "freshness_lag_seconds": 95.0,
-  "freshness_lag_human": "1m 35s",
-  "max_date": "2026-04-24T03:55:00Z",
+  "last_run_time": "2026-04-25T03:38:31Z",
+  "duration_seconds": 1.0,
+  "duration_human": "1s",
+  "freshness_lag_seconds": 1856.0,
+  "freshness_lag_human": "30m 56s",
+  "max_date": "2026-04-25T03:07:35Z",
   "schema_version": null,
   "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
   "row_counts": {
@@ -23,7 +23,7 @@
     "inserted": 0,
     "matches": 0,
     "non_empty_feed_count": 8,
-    "total_feed_items_seen": 226
+    "total_feed_items_seen": 220
   },
   "key_checks": [
     {
@@ -101,20 +101,20 @@
   "artifact_links": [
     {
       "label": "GitHub Actions Run",
-      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/24871386262"
+      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/24921701121"
     }
   ],
   "meta": {
     "repo": "yt-codex/enbloc-morning-digest",
     "run_attempt": "1",
-    "run_id": "24871386262",
-    "sha": "6ee3f12f5ef12873365a919e4a40b4add41b4d13",
+    "run_id": "24921701121",
+    "sha": "ab51f739569975cadda747919d2b5eea5bd22763",
     "workflow": "Daily En-Bloc Digest"
   },
-  "baseline_duration_seconds": 51.0,
-  "baseline_duration_sample_count": 3,
+  "baseline_duration_seconds": null,
+  "baseline_duration_sample_count": 2,
   "detail_page": "yt-codex-enbloc-morning-digest.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-04-24T18:25:42Z"
+  "generated_at": "2026-04-25T18:07:25Z"
 }
