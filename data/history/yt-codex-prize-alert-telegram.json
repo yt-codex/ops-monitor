@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-23T18:28:44Z",
-    "last_run_time": "2026-03-23T18:01:12Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": 2.0,
-    "freshness_lag_seconds": 0.0,
-    "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-03-24T18:35:17Z",
     "last_run_time": "2026-03-24T18:06:00Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 0.0,
     "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-05-02T18:32:16Z",
+    "last_run_time": "2026-05-02T18:00:35Z",
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": 21.0,
+    "freshness_lag_seconds": 1901.6268,
+    "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
+    "top_warning": "The read operation timed out"
   }
 ]
