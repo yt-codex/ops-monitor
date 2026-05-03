@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-25T18:31:34Z",
-    "last_run_time": "2026-03-25T05:13:07Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 3799.0,
-    "schema_hash": "0fb2fb037f826a729e8bcc4bf9f477e45334176a2c26fd6c199fce8f82760809",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-03-26T18:37:48Z",
     "last_run_time": "2026-03-26T05:24:23Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 76.0,
     "schema_hash": "e3adb7ccd4e93b1a89098a4f9be69898dae90a19db107d7bdf55419c74c2d663",
     "top_warning": "macro.failed_items: loan_limits_granted_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint | loan_limits_utilised_building_construction:MAS API I.6 fetch/parse failed: MAS API request failed after 5 attempts: received non-JSON response from MAS I.6 endpoint"
+  },
+  {
+    "captured_at": "2026-05-03T18:33:35Z",
+    "last_run_time": "2026-05-03T10:47:13Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 60.0,
+    "schema_hash": "ea6fab8dc8b9dc94b51aa2a916013c4b0a92307709bbbcbee6da5a7c77e20de7",
+    "top_warning": "None"
   }
 ]
