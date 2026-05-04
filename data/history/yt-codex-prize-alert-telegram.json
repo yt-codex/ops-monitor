@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-25T18:31:34Z",
-    "last_run_time": "2026-03-25T18:08:34Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": 1.0,
-    "freshness_lag_seconds": 0.0,
-    "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-03-26T18:37:48Z",
     "last_run_time": "2026-03-26T18:09:36Z",
     "status": "OK",
@@ -392,6 +382,16 @@
   {
     "captured_at": "2026-05-03T18:33:35Z",
     "last_run_time": "2026-05-03T17:59:34Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": 2.0,
+    "freshness_lag_seconds": 0.0,
+    "schema_hash": "2e96cafdf4be8a680ec81d8f78df42396b32092652e431340c9141cab74c7b61",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-05-04T19:05:49Z",
+    "last_run_time": "2026-05-04T18:51:44Z",
     "status": "OK",
     "severity": "OK",
     "duration_seconds": 2.0,
