@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-03-29T18:00:30Z",
-    "last_run_time": "2026-03-29T16:39:29Z",
-    "status": "FAIL",
-    "severity": "FAIL",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 17.0,
-    "schema_hash": "1b10b729bb226fe24a49738c43d2f5ae736481e19cb4f54ba63825755e1f5b37",
-    "top_warning": "news.feed_health: meta.feeds is empty"
-  },
-  {
     "captured_at": "2026-03-30T18:35:40Z",
     "last_run_time": "2026-03-30T14:29:35Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 73.0,
     "schema_hash": "de25f0e5911b8787d1d6db68c3e74b394a3942ed34dfdb2cf8a86d96a19e9247",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-05-07T19:17:13Z",
+    "last_run_time": "2026-05-07T11:45:20Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 50.0,
+    "schema_hash": "fc97d48309a45d43a75429d3f607f21fcf7d4343cca1a4ea2290f2e5d949634d",
     "top_warning": "None"
   }
 ]
