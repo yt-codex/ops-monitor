@@ -9,7 +9,7 @@
   "app_url": null,
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-05-08T18:21:28Z",
+  "last_run_time": "2026-05-09T18:01:14Z",
   "duration_seconds": 2.0,
   "duration_human": "2s",
   "freshness_lag_seconds": 0.0,
@@ -67,20 +67,20 @@
   "artifact_links": [
     {
       "label": "workflow_run",
-      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25572140632"
+      "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25608015482"
     }
   ],
   "meta": {
-    "run_id": "25572140632",
-    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25572140632",
+    "run_id": "25608015482",
+    "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25608015482",
     "workflow": "Scheduled Ops Probe",
     "job": "run-and-emit-probe",
-    "sha": "ba30fd27c307eda6b827849ba285b2e31881ec5d"
+    "sha": "89b284effed432184fd78de8e3222c72c66e3997"
   },
   "baseline_duration_seconds": null,
   "baseline_duration_sample_count": 0,
   "detail_page": "yt-codex-prize-alert-telegram.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-05-09T00:32:29Z"
+  "generated_at": "2026-05-09T18:34:55Z"
 }
