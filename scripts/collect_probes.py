@@ -256,6 +256,16 @@ def duration_baseline_stats(
     return statistics.median(values), len(values)
 
 
+def median_duration(history: list[dict[str, Any]]) -> float | None:
+    """Backward-compatible helper used by the existing unit tests."""
+    baseline, _ = duration_baseline_stats(
+        history,
+        min_duration_seconds=0,
+        min_samples=DEFAULT_DURATION_BASELINE_MIN_SAMPLES,
+    )
+    return baseline
+
+
 def severity_for(
     base_status: str,
     lag_seconds: float | None,
