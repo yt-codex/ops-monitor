@@ -25,6 +25,12 @@
     {
       "repo": "yt-codex/sg-developers-health-monitor",
       "app_url": "https://yt-codex.github.io/sg-developers-health-monitor/index.html"
+    },
+    {
+      "repo": "yt-codex/sg-listing-intelligence-dashboard",
+      "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
+      "freshness_warn_hours": 240,
+      "freshness_fail_hours": 504
     }
   ]
 }
