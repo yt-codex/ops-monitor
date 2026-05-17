@@ -1,0 +1,97 @@
+{
+  "slug": "yt-codex-sg-listing-intelligence-dashboard",
+  "owner": "yt-codex",
+  "repo": "sg-listing-intelligence-dashboard",
+  "full_name": "yt-codex/sg-listing-intelligence-dashboard",
+  "branch": "main",
+  "probe_path": "ops/probe.json",
+  "probe_source_url": "https://github.com/yt-codex/sg-listing-intelligence-dashboard/blob/main/ops/probe.json",
+  "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
+  "status": "OK",
+  "severity": "OK",
+  "last_run_time": "2026-05-17T13:38:01Z",
+  "duration_seconds": null,
+  "duration_human": "n/a",
+  "freshness_lag_seconds": 135481.924296,
+  "freshness_lag_human": "1d 13h",
+  "max_date": "2026-05-16",
+  "schema_version": "1.0",
+  "schema_hash": "538284dde405b7fc639cc439b0fdfc992bea926d4bf42eca162616c4f3c169d2",
+  "row_counts": {
+    "market": 42,
+    "regions": 420,
+    "districts": 1137,
+    "projects": 12600,
+    "projectTrends": 39963,
+    "priceCuts": 5111,
+    "duplicates": 2096,
+    "agents": 2640
+  },
+  "key_checks": [
+    {
+      "name": "latest week manifest",
+      "status": "OK",
+      "detail": "latest week is sg-week-2026-05-16"
+    },
+    {
+      "name": "snapshot freshness",
+      "status": "OK",
+      "detail": "latest snapshot date is 2026-05-16",
+      "metric": 1.57
+    },
+    {
+      "name": "market rows",
+      "status": "OK",
+      "detail": "42 rows exported",
+      "metric": 42
+    },
+    {
+      "name": "districts rows",
+      "status": "OK",
+      "detail": "1,137 rows exported",
+      "metric": 1137
+    },
+    {
+      "name": "projects rows",
+      "status": "OK",
+      "detail": "12,600 rows exported",
+      "metric": 12600
+    },
+    {
+      "name": "projectTrends rows",
+      "status": "OK",
+      "detail": "39,963 rows exported",
+      "metric": 39963
+    },
+    {
+      "name": "static app assets",
+      "status": "OK",
+      "detail": "index.html and app.js are present"
+    }
+  ],
+  "warnings": [],
+  "top_warning": "None",
+  "artifact_links": [
+    {
+      "label": "dashboard",
+      "url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/"
+    },
+    {
+      "label": "dashboard_data",
+      "url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/assets/dashboard-data.json"
+    }
+  ],
+  "meta": {
+    "repo": "yt-codex/sg-listing-intelligence-dashboard",
+    "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
+    "latest_week": "sg-week-2026-05-16",
+    "built_at_utc": "2026-05-17 01:55:13",
+    "source_path": "../propertyguru-sg-weekly-snapshots-prod-20260403-125756/data/state/propertyguru.sqlite"
+  },
+  "baseline_duration_seconds": null,
+  "baseline_duration_sample_count": 0,
+  "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
+  "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
+  "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
+  "generated_at": "2026-05-17T13:38:42Z"
+}

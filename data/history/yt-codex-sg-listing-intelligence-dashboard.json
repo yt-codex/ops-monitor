@@ -1,0 +1,12 @@
+[
+  {
+    "captured_at": "2026-05-17T13:38:42Z",
+    "last_run_time": "2026-05-17T13:38:01Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 135481.924296,
+    "schema_hash": "538284dde405b7fc639cc439b0fdfc992bea926d4bf42eca162616c4f3c169d2",
+    "top_warning": "None"
+  }
+]
