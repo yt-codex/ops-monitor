@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-17T13:38:42Z",
+  "generated_at": "2026-05-17T18:39:09Z",
   "dashboard_base_url": "https://yt-codex.github.io/ops-monitor/",
   "dashboard_url": "https://yt-codex.github.io/ops-monitor/",
   "repo_count": 5,
@@ -112,7 +112,7 @@
       "detail_page": "yt-codex-amenities-dashboard.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-05-17T13:38:42Z"
+      "generated_at": "2026-05-17T18:39:09Z"
     },
     {
       "slug": "yt-codex-enbloc-morning-digest",
@@ -232,7 +232,7 @@
       "detail_page": "yt-codex-enbloc-morning-digest.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-05-17T13:38:42Z"
+      "generated_at": "2026-05-17T18:39:09Z"
     },
     {
       "slug": "yt-codex-prize-alert-telegram",
@@ -245,7 +245,7 @@
       "app_url": null,
       "status": "OK",
       "severity": "OK",
-      "last_run_time": "2026-05-16T18:03:06Z",
+      "last_run_time": "2026-05-17T18:07:55Z",
       "duration_seconds": 2.0,
       "duration_human": "2s",
       "freshness_lag_seconds": 0.0,
@@ -303,22 +303,22 @@
       "artifact_links": [
         {
           "label": "workflow_run",
-          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25969094813"
+          "url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25998645869"
         }
       ],
       "meta": {
-        "run_id": "25969094813",
-        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25969094813",
+        "run_id": "25998645869",
+        "run_url": "https://github.com/yt-codex/prize-alert-telegram/actions/runs/25998645869",
         "workflow": "Scheduled Ops Probe",
         "job": "run-and-emit-probe",
-        "sha": "3caa067eb911b0bfa6f175d7cb54b558889f7d00"
+        "sha": "724cffef68860deccd6899ec91f000a1e2697ccb"
       },
       "baseline_duration_seconds": null,
       "baseline_duration_sample_count": 0,
       "detail_page": "yt-codex-prize-alert-telegram.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-prize-alert-telegram.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-05-17T13:38:42Z"
+      "generated_at": "2026-05-17T18:39:09Z"
     },
     {
       "slug": "yt-codex-sg-developers-health-monitor",
@@ -577,7 +577,7 @@
       "detail_page": "yt-codex-sg-developers-health-monitor.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-developers-health-monitor.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-05-17T13:38:42Z"
+      "generated_at": "2026-05-17T18:39:09Z"
     },
     {
       "slug": "yt-codex-sg-listing-intelligence-dashboard",
@@ -590,14 +590,14 @@
       "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
       "status": "OK",
       "severity": "OK",
-      "last_run_time": "2026-05-17T13:38:01Z",
+      "last_run_time": "2026-05-17T17:30:41Z",
       "duration_seconds": null,
       "duration_human": "n/a",
-      "freshness_lag_seconds": 135481.924296,
-      "freshness_lag_human": "1d 13h",
+      "freshness_lag_seconds": 149441.728843,
+      "freshness_lag_human": "1d 17h",
       "max_date": "2026-05-16",
       "schema_version": "1.0",
-      "schema_hash": "538284dde405b7fc639cc439b0fdfc992bea926d4bf42eca162616c4f3c169d2",
+      "schema_hash": "ed02ae21c2e72d85adfe7139adc031c25ac530206e09823179e52d1086b982b3",
       "row_counts": {
         "market": 42,
         "regions": 420,
@@ -618,7 +618,7 @@
           "name": "snapshot freshness",
           "status": "OK",
           "detail": "latest snapshot date is 2026-05-16",
-          "metric": 1.57
+          "metric": 1.73
         },
         {
           "name": "market rows",
@@ -674,7 +674,7 @@
       "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
       "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
       "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-      "generated_at": "2026-05-17T13:38:42Z"
+      "generated_at": "2026-05-17T18:39:09Z"
     }
   ]
 }
