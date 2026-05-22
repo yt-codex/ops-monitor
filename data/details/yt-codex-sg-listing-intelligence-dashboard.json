@@ -9,11 +9,11 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-05-21T18:15:56Z",
+  "last_run_time": "2026-05-22T18:10:41Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 497756.81791,
-  "freshness_lag_human": "5d 18h",
+  "freshness_lag_seconds": 583841.64683,
+  "freshness_lag_human": "6d 18h",
   "max_date": "2026-05-16",
   "schema_version": "1.0",
   "schema_hash": "ed02ae21c2e72d85adfe7139adc031c25ac530206e09823179e52d1086b982b3",
@@ -37,7 +37,7 @@
       "name": "snapshot freshness",
       "status": "OK",
       "detail": "latest snapshot date is 2026-05-16",
-      "metric": 5.76
+      "metric": 6.76
     },
     {
       "name": "market rows",
@@ -93,5 +93,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-05-21T19:28:04Z"
+  "generated_at": "2026-05-22T19:15:44Z"
 }
