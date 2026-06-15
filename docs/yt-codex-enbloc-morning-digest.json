@@ -7,23 +7,23 @@
   "probe_path": "ops/probe.json",
   "probe_source_url": "https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json",
   "app_url": null,
-  "status": "OK",
-  "severity": "OK",
-  "last_run_time": "2026-06-14T05:14:47Z",
+  "status": "FAIL",
+  "severity": "FAIL",
+  "last_run_time": "2026-06-15T05:35:13Z",
   "duration_seconds": 1.0,
   "duration_human": "1s",
-  "freshness_lag_seconds": 1187.0,
-  "freshness_lag_human": "19m 47s",
-  "max_date": "2026-06-14T04:55:00Z",
+  "freshness_lag_seconds": 505.0,
+  "freshness_lag_human": "8m 25s",
+  "max_date": "2026-06-15T05:26:48Z",
   "schema_version": null,
-  "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+  "schema_hash": "351960a1b1d58bf3c815d00cc719717dc3f5b111aafa7f71f95395319f909348",
   "row_counts": {
     "alert_eligible": 0,
     "email_sent": 0,
     "inserted": 0,
     "matches": 0,
-    "non_empty_feed_count": 8,
-    "total_feed_items_seen": 183
+    "non_empty_feed_count": 4,
+    "total_feed_items_seen": 96
   },
   "key_checks": [
     {
@@ -37,22 +37,22 @@
     },
     {
       "name": "feed_fetch_success_rate",
-      "status": "OK",
-      "detail": "all configured feeds fetched successfully",
+      "status": "FAIL",
+      "detail": "feed fetch success rate 50.00% is below fail threshold 60.00%",
       "metric": {
         "fail_threshold": 0.6,
-        "failure_count": 0,
-        "success_count": 8,
-        "success_rate": 1.0,
+        "failure_count": 4,
+        "success_count": 4,
+        "success_rate": 0.5,
         "total_feeds": 8
       }
     },
     {
       "name": "non_empty_feeds",
       "status": "OK",
-      "detail": "all feeds returned at least one item",
+      "detail": "4 feed(s) returned zero items; treated as normal variability",
       "metric": {
-        "non_empty_feed_count": 8,
+        "non_empty_feed_count": 4,
         "total_feeds": 8
       }
     },
@@ -87,28 +87,30 @@
     {
       "name": "schema_fingerprint",
       "status": "OK",
-      "detail": "schema hash unchanged from previous probe",
+      "detail": "schema comparison skipped because one or more feeds returned zero items",
       "metric": {
         "previous_schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
         "schema_changed": false,
-        "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
-        "schema_sample_complete": true
+        "schema_hash": "351960a1b1d58bf3c815d00cc719717dc3f5b111aafa7f71f95395319f909348",
+        "schema_sample_complete": false
       }
     }
   ],
-  "warnings": [],
-  "top_warning": "None",
+  "warnings": [
+    "feed fetch success rate 50.00% is below fail threshold 60.00%"
+  ],
+  "top_warning": "feed fetch success rate 50.00% is below fail threshold 60.00%",
   "artifact_links": [
     {
       "label": "GitHub Actions Run",
-      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/27489187244"
+      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/27526224312"
     }
   ],
   "meta": {
     "repo": "yt-codex/enbloc-morning-digest",
     "run_attempt": "1",
-    "run_id": "27489187244",
-    "sha": "4d39d7688ebcf04a97073931f142c8ee67686757",
+    "run_id": "27526224312",
+    "sha": "db32c40f0ad171ddfec9adc634dee3d9ab54e706",
     "workflow": "Daily En-Bloc Digest"
   },
   "baseline_duration_seconds": null,
@@ -116,5 +118,5 @@
   "detail_page": "yt-codex-enbloc-morning-digest.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-06-14T18:53:04Z"
+  "generated_at": "2026-06-15T20:37:56Z"
 }
