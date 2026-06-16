@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-05-07T19:17:13Z",
-    "last_run_time": "2026-05-07T04:10:55Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": 0.0,
-    "freshness_lag_seconds": 595.0,
-    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-05-08T18:54:22Z",
     "last_run_time": "2026-05-08T03:58:15Z",
     "status": "WARN",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 505.0,
     "schema_hash": "351960a1b1d58bf3c815d00cc719717dc3f5b111aafa7f71f95395319f909348",
     "top_warning": "feed fetch success rate 50.00% is below fail threshold 60.00%"
+  },
+  {
+    "captured_at": "2026-06-16T02:46:22Z",
+    "last_run_time": "2026-06-16T00:58:57Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": 36.0,
+    "freshness_lag_seconds": 947.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "schema hash changed from 351960a1b1d58bf3c815d00cc719717dc3f5b111aafa7f71f95395319f909348 to 0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229"
   }
 ]
