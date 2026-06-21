@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-05-13T19:21:58Z",
-    "last_run_time": "2026-05-13T04:28:14Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": 0.0,
-    "freshness_lag_seconds": 764.0,
-    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-05-14T19:21:53Z",
     "last_run_time": "2026-05-14T04:27:49Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 880.0,
     "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-06-21T19:04:19Z",
+    "last_run_time": "2026-06-21T05:24:27Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": 1.0,
+    "freshness_lag_seconds": 2067.0,
+    "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+    "top_warning": "schema hash changed from 73e6ec3b9f5b9fe590f318fae5b6ad940d75a33827b1b36f7ea4646af8f939bd to 0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229"
   }
 ]
