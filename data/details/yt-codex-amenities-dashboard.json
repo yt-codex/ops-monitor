@@ -120,10 +120,10 @@
     "job": "refresh",
     "sha": "3de54ced581c714c349219f991d2407f43722846"
   },
-  "baseline_duration_seconds": null,
-  "baseline_duration_sample_count": 2,
+  "baseline_duration_seconds": 111.0,
+  "baseline_duration_sample_count": 3,
   "detail_page": "yt-codex-amenities-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-07-01T19:22:03Z"
+  "generated_at": "2026-07-02T19:01:20Z"
 }
