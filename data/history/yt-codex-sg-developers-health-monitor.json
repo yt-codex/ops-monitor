@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-05-29T19:55:31Z",
-    "last_run_time": "2026-05-29T12:44:42Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 69.0,
-    "schema_hash": "c3b13e5bd743e46a6b44f9c7631629079d70745e5548c4bb10437e0f34e5e80a",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-05-30T18:44:13Z",
     "last_run_time": "2026-05-30T11:15:44Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 52.0,
     "schema_hash": "a2550db1397f595cfe0f590ed55cf14620dc8c79b13e9a5f47a5429810ea0b5e",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-07-08T18:55:34Z",
+    "last_run_time": "2026-07-08T11:45:25Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 57.0,
+    "schema_hash": "dee2ecec5996c278511c77169eba3bb7bf30d012ef782eb182c7d9c7cc2e31ca",
     "top_warning": "None"
   }
 ]
