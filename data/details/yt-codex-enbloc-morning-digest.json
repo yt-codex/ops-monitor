@@ -7,23 +7,23 @@
   "probe_path": "ops/probe.json",
   "probe_source_url": "https://github.com/yt-codex/enbloc-morning-digest/blob/main/ops/probe.json",
   "app_url": null,
-  "status": "WARN",
-  "severity": "WARN",
-  "last_run_time": "2026-07-14T03:43:31Z",
+  "status": "OK",
+  "severity": "OK",
+  "last_run_time": "2026-07-15T03:43:32Z",
   "duration_seconds": 0.0,
   "duration_human": "0s",
-  "freshness_lag_seconds": 274.0,
-  "freshness_lag_human": "4m 34s",
-  "max_date": "2026-07-14T03:38:57Z",
+  "freshness_lag_seconds": 662.0,
+  "freshness_lag_human": "11m 2s",
+  "max_date": "2026-07-15T03:32:30Z",
   "schema_version": null,
-  "schema_hash": "73e6ec3b9f5b9fe590f318fae5b6ad940d75a33827b1b36f7ea4646af8f939bd",
+  "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
   "row_counts": {
     "alert_eligible": 0,
     "email_sent": 0,
     "inserted": 0,
     "matches": 0,
-    "non_empty_feed_count": 7,
-    "total_feed_items_seen": 143
+    "non_empty_feed_count": 8,
+    "total_feed_items_seen": 206
   },
   "key_checks": [
     {
@@ -37,22 +37,22 @@
     },
     {
       "name": "feed_fetch_success_rate",
-      "status": "WARN",
-      "detail": "1 feed(s) failed to fetch or parse",
+      "status": "OK",
+      "detail": "all configured feeds fetched successfully",
       "metric": {
         "fail_threshold": 0.6,
-        "failure_count": 1,
-        "success_count": 7,
-        "success_rate": 0.875,
+        "failure_count": 0,
+        "success_count": 8,
+        "success_rate": 1.0,
         "total_feeds": 8
       }
     },
     {
       "name": "non_empty_feeds",
       "status": "OK",
-      "detail": "1 feed(s) returned zero items; treated as normal variability",
+      "detail": "all feeds returned at least one item",
       "metric": {
-        "non_empty_feed_count": 7,
+        "non_empty_feed_count": 8,
         "total_feeds": 8
       }
     },
@@ -87,30 +87,28 @@
     {
       "name": "schema_fingerprint",
       "status": "OK",
-      "detail": "schema comparison skipped because one or more feeds returned zero items",
+      "detail": "schema hash unchanged from previous probe",
       "metric": {
         "previous_schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
         "schema_changed": false,
-        "schema_hash": "73e6ec3b9f5b9fe590f318fae5b6ad940d75a33827b1b36f7ea4646af8f939bd",
-        "schema_sample_complete": false
+        "schema_hash": "0e43544a1dc88a641091cbfbaca979a1fbc9efb001ec604e8bf98843a1c96229",
+        "schema_sample_complete": true
       }
     }
   ],
-  "warnings": [
-    "1 feed(s) failed to fetch or parse"
-  ],
-  "top_warning": "1 feed(s) failed to fetch or parse",
+  "warnings": [],
+  "top_warning": "None",
   "artifact_links": [
     {
       "label": "GitHub Actions Run",
-      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/29304181256"
+      "url": "https://github.com/yt-codex/enbloc-morning-digest/actions/runs/29387215532"
     }
   ],
   "meta": {
     "repo": "yt-codex/enbloc-morning-digest",
     "run_attempt": "1",
-    "run_id": "29304181256",
-    "sha": "8a5663535b95a51e024c2de63ba010e1d6ac26dc",
+    "run_id": "29387215532",
+    "sha": "cf0b5181ae22860faba764889ba8727469f44eae",
     "workflow": "Daily En-Bloc Digest"
   },
   "baseline_duration_seconds": null,
@@ -118,5 +116,5 @@
   "detail_page": "yt-codex-enbloc-morning-digest.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-enbloc-morning-digest.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-07-14T18:44:15Z"
+  "generated_at": "2026-07-15T18:41:55Z"
 }
