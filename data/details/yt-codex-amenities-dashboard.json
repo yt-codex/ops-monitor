@@ -123,7 +123,7 @@
   "baseline_duration_seconds": 111.0,
   "baseline_duration_sample_count": 3,
   "detail_page": "yt-codex-amenities-dashboard.html",
-  "detail_url": null,
-  "dashboard_home_url": "../",
-  "generated_at": "2026-07-29T00:36:26Z"
+  "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-amenities-dashboard.html",
+  "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
+  "generated_at": "2026-07-29T18:34:52Z"
 }

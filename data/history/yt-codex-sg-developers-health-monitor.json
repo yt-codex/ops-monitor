@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-19T19:16:19Z",
-    "last_run_time": "2026-06-19T13:30:43Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 75.0,
-    "schema_hash": "dd34d62d3d3459ef4d712ec92d416eaa6a0cb244b8d4d7b897f633ca3798c609",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-20T18:57:17Z",
     "last_run_time": "2026-06-20T11:53:45Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 0.0,
     "schema_hash": "485f3fdff534ee91dbf9a7a388e9391c301ef1e933a4b4bd109349862fac28f9",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-07-29T18:34:52Z",
+    "last_run_time": "2026-07-29T11:57:59Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 75.0,
+    "schema_hash": "1213a5cceceb66b0aecf04a6756350741ba0a90e7aa7f454eac0db981ec9b073",
+    "top_warning": "developer.fetch_health: partial=13 error=0"
   }
 ]
