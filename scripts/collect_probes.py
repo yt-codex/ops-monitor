@@ -1027,7 +1027,7 @@ def main() -> int:
         repos_cfg = []
 
     retention = args.retention or to_int(config.get("history_retention")) or 40
-    token = str((os.environ.get("GH_TOKEN") or "")).strip() or None
+    token = str((os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or "")).strip() or None
     raw_base_url = args.dashboard_base_url or os.environ.get("DASHBOARD_BASE_URL")
     if not raw_base_url:
         raw_base_url = default_dashboard_url_from_env()
