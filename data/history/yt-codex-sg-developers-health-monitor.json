@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-22T20:21:08Z",
-    "last_run_time": "2026-06-22T10:34:55Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 72.0,
-    "schema_hash": "9a4fac26d26b353c90d9f5f7276f709c658db8ecdb4369f24041d729c2d24e69",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-23T19:29:59Z",
     "last_run_time": "2026-06-23T12:31:24Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 110.0,
     "schema_hash": "440e2d003bdfc917c2d79db6526c4394ba06d37d92da945874cf7aa33e7f8ced",
     "top_warning": "developer.fetch_health: partial=12 error=0"
+  },
+  {
+    "captured_at": "2026-08-01T18:34:31Z",
+    "last_run_time": "2026-08-01T11:14:01Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 68.0,
+    "schema_hash": "c358df7cdbdd7e0fcfa5d03ae322697abb573681a8d88ec7b3b1785557ca339e",
+    "top_warning": "macro.failed_items: sgs_10y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071) | sgs_2y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071) | term_spread_10y_2y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071)"
   }
 ]
