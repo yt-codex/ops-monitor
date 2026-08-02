@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-23T19:29:59Z",
-    "last_run_time": "2026-06-23T12:31:24Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 67.0,
-    "schema_hash": "629c988ae1d32777756247ef786593d5f8b3b70b1c1975a8c12fae6c268ab4e5",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-24T19:15:33Z",
     "last_run_time": "2026-06-24T12:16:31Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 68.0,
     "schema_hash": "c358df7cdbdd7e0fcfa5d03ae322697abb573681a8d88ec7b3b1785557ca339e",
     "top_warning": "macro.failed_items: sgs_10y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071) | sgs_2y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071) | term_spread_10y_2y:HTTP 502 (https://tablebuilder.singstat.gov.sg/api/table/tabledata/M700071)"
+  },
+  {
+    "captured_at": "2026-08-02T18:36:16Z",
+    "last_run_time": "2026-08-02T11:14:33Z",
+    "status": "FAIL",
+    "severity": "FAIL",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 107.0,
+    "schema_hash": "9c7c59f40c628e3d1d3c04ffa865c203e107c34e2a9bc8ee3dadefd8e45fb66e",
+    "top_warning": "news.feed_health: all feeds failed"
   }
 ]
