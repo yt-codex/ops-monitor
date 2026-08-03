@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-24T19:15:33Z",
-    "last_run_time": "2026-06-24T12:16:31Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 52.0,
-    "schema_hash": "1e9f52757b2252309070f79c593f609d6b4332b9d295088f8cb46e8140b4379a",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-25T19:27:53Z",
     "last_run_time": "2026-06-25T12:14:12Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 107.0,
     "schema_hash": "9c7c59f40c628e3d1d3c04ffa865c203e107c34e2a9bc8ee3dadefd8e45fb66e",
     "top_warning": "news.feed_health: all feeds failed"
+  },
+  {
+    "captured_at": "2026-08-03T19:08:44Z",
+    "last_run_time": "2026-08-03T12:53:21Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 74.0,
+    "schema_hash": "f55c8d5a0a05231b48cbe049a2dd0a26dcfc555987be9b49188ded1de97c242a",
+    "top_warning": "developer.fetch_health: partial=12 error=0"
   }
 ]

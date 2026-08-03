@@ -9,23 +9,23 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-08-02T03:42:01Z",
+  "last_run_time": "2026-08-03T13:56:36Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 99721.722456,
-  "freshness_lag_human": "1d 3h",
+  "freshness_lag_seconds": 222996.77086,
+  "freshness_lag_human": "2d 13h",
   "max_date": "2026-08-01",
   "schema_version": "1.0",
   "schema_hash": "6ebd618280238621a1569a0520678acade68b9797aee5646bf756bedc9df6ec9",
   "row_counts": {
     "market": 108,
     "regions": 1080,
-    "districts": 2921,
+    "districts": 2942,
     "projects": 32400,
-    "projectTrends": 158477,
-    "priceCuts": 13964,
-    "duplicates": 4201,
-    "agents": 5054
+    "projectTrends": 162487,
+    "priceCuts": 13983,
+    "duplicates": 4807,
+    "agents": 5756
   },
   "key_checks": [
     {
@@ -37,7 +37,7 @@
       "name": "snapshot freshness",
       "status": "OK",
       "detail": "latest snapshot date is 2026-08-01",
-      "metric": 1.15
+      "metric": 2.58
     },
     {
       "name": "market rows",
@@ -48,8 +48,8 @@
     {
       "name": "districts rows",
       "status": "OK",
-      "detail": "2,921 rows exported",
-      "metric": 2921
+      "detail": "2,942 rows exported",
+      "metric": 2942
     },
     {
       "name": "projects rows",
@@ -60,8 +60,8 @@
     {
       "name": "projectTrends rows",
       "status": "OK",
-      "detail": "158,477 rows exported",
-      "metric": 158477
+      "detail": "162,487 rows exported",
+      "metric": 162487
     },
     {
       "name": "static app assets",
@@ -85,7 +85,7 @@
     "repo": "yt-codex/sg-listing-intelligence-dashboard",
     "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
     "latest_week": "sg-week-2026-08-01",
-    "built_at_utc": "2026-08-02 03:41:53",
+    "built_at_utc": "2026-08-03 13:56:27",
     "source_path": "../propertyguru-sg-weekly-snapshots-prod-20260403-125756/data/state/propertyguru.sqlite"
   },
   "baseline_duration_seconds": null,
@@ -93,5 +93,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-08-02T18:36:16Z"
+  "generated_at": "2026-08-03T19:08:44Z"
 }
