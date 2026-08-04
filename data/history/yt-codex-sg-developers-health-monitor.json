@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-25T19:27:53Z",
-    "last_run_time": "2026-06-25T12:14:12Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 49.0,
-    "schema_hash": "38266394897f6447bd13f12f84ea560f00042fa756d1942846e9aaae82ca573a",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-26T19:21:08Z",
     "last_run_time": "2026-06-26T12:09:01Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 74.0,
     "schema_hash": "f55c8d5a0a05231b48cbe049a2dd0a26dcfc555987be9b49188ded1de97c242a",
     "top_warning": "developer.fetch_health: partial=12 error=0"
+  },
+  {
+    "captured_at": "2026-08-04T00:12:25Z",
+    "last_run_time": "2026-08-04T00:11:35Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 40770.0,
+    "schema_hash": "f55c8d5a0a05231b48cbe049a2dd0a26dcfc555987be9b49188ded1de97c242a",
+    "top_warning": "None"
   }
 ]
