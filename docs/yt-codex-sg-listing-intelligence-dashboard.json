@@ -9,59 +9,59 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-08-17T00:22:53Z",
+  "last_run_time": "2026-08-22T20:49:24Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 174173.104812,
-  "freshness_lag_human": "2d 0h",
-  "max_date": "2026-08-15",
+  "freshness_lag_seconds": 74964.077624,
+  "freshness_lag_human": "20h 49m",
+  "max_date": "2026-08-22",
   "schema_version": "1.0",
   "schema_hash": "6ebd618280238621a1569a0520678acade68b9797aee5646bf756bedc9df6ec9",
   "row_counts": {
-    "market": 120,
-    "regions": 1200,
-    "districts": 3267,
-    "projects": 9000,
-    "projectTrends": 73314,
-    "priceCuts": 8445,
-    "duplicates": 2999,
-    "agents": 3659
+    "market": 126,
+    "regions": 1260,
+    "districts": 3432,
+    "projects": 9450,
+    "projectTrends": 78986,
+    "priceCuts": 8895,
+    "duplicates": 3144,
+    "agents": 3806
   },
   "key_checks": [
     {
       "name": "latest week manifest",
       "status": "OK",
-      "detail": "latest week is sg-week-2026-08-15"
+      "detail": "latest week is sg-week-2026-08-22"
     },
     {
       "name": "snapshot freshness",
       "status": "OK",
-      "detail": "latest snapshot date is 2026-08-15",
-      "metric": 2.02
+      "detail": "latest snapshot date is 2026-08-22",
+      "metric": 0.87
     },
     {
       "name": "market rows",
       "status": "OK",
-      "detail": "120 rows exported",
-      "metric": 120
+      "detail": "126 rows exported",
+      "metric": 126
     },
     {
       "name": "districts rows",
       "status": "OK",
-      "detail": "3,267 rows exported",
-      "metric": 3267
+      "detail": "3,432 rows exported",
+      "metric": 3432
     },
     {
       "name": "projects rows",
       "status": "OK",
-      "detail": "9,000 rows exported",
-      "metric": 9000
+      "detail": "9,450 rows exported",
+      "metric": 9450
     },
     {
       "name": "projectTrends rows",
       "status": "OK",
-      "detail": "73,314 rows exported",
-      "metric": 73314
+      "detail": "78,986 rows exported",
+      "metric": 78986
     },
     {
       "name": "static app assets",
@@ -84,8 +84,8 @@
   "meta": {
     "repo": "yt-codex/sg-listing-intelligence-dashboard",
     "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
-    "latest_week": "sg-week-2026-08-15",
-    "built_at_utc": "2026-08-16 19:02:00",
+    "latest_week": "sg-week-2026-08-22",
+    "built_at_utc": "2026-08-22 20:49:15",
     "source_path": "../propertyguru-sg-weekly-snapshots-prod-20260403-125756/data/state/propertyguru.sqlite"
   },
   "baseline_duration_seconds": null,
@@ -93,5 +93,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-08-22T17:53:54Z"
+  "generated_at": "2026-08-23T17:52:33Z"
 }

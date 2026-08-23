@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-07-15T18:41:55Z",
-    "last_run_time": "2026-07-15T11:24:58Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 54.0,
-    "schema_hash": "2cdf8cd6565b7a04569ea504579521b55136a44dbfca750db045830666f00992",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-07-16T18:43:34Z",
     "last_run_time": "2026-07-16T11:30:13Z",
     "status": "OK",
@@ -398,5 +388,15 @@
     "freshness_lag_seconds": 77.0,
     "schema_hash": "f2136f12bed357dadd24ebaa748c7d8ce7ba278384d93e3f882d5f6e7248925c",
     "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-08-23T17:52:33Z",
+    "last_run_time": "2026-08-23T10:16:52Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 111.0,
+    "schema_hash": "71a700e9853c2be5dd861589a0f0aa315644a34c7880a55eb432f858dc1a5a64",
+    "top_warning": "news.feed_health: google news delta failed for all 12 queries; cached news data remains available"
   }
 ]
