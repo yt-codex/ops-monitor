@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-07-29T00:08:38Z",
-    "last_run_time": "2026-07-28T11:54:47Z",
-    "status": "FAIL",
-    "severity": "FAIL",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 98.0,
-    "schema_hash": "a2e70f8cd4c8c37b0c268496e0bc55e453d048309fe0c9467a7bb6eade9ca639",
-    "top_warning": "developer.fetch_health: developer ratios have zero ok records"
-  },
-  {
     "captured_at": "2026-07-29T00:35:58Z",
     "last_run_time": "2026-07-29T00:32:07Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 183.0,
     "schema_hash": "2981f3d00565ed04488b2ce750ea9b7615848c577e52bd5fadff4de44ea2b0cc",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-09-04T19:49:26Z",
+    "last_run_time": "2026-09-04T13:56:11Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 67.0,
+    "schema_hash": "79417fa016d2d98b2edb9316820d05d363f844e167b4836fed4b7c3937b727f0",
     "top_warning": "None"
   }
 ]
