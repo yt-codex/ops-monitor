@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-08-02T18:36:16Z",
-    "last_run_time": "2026-08-02T11:14:33Z",
-    "status": "FAIL",
-    "severity": "FAIL",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 107.0,
-    "schema_hash": "9c7c59f40c628e3d1d3c04ffa865c203e107c34e2a9bc8ee3dadefd8e45fb66e",
-    "top_warning": "news.feed_health: all feeds failed"
-  },
-  {
     "captured_at": "2026-08-03T19:08:44Z",
     "last_run_time": "2026-08-03T12:53:21Z",
     "status": "WARN",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 53.0,
     "schema_hash": "e9b8935db18841b95013897545eee8afb182700162b97b84e2b9a58dd360ea7c",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-09-10T20:00:14Z",
+    "last_run_time": "2026-09-10T14:00:16Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 53.0,
+    "schema_hash": "54beed70f4e4a7b3a1008fa8f39e7e13fe89cd6c970fde3334db02330fd6ba5c",
     "top_warning": "None"
   }
 ]
