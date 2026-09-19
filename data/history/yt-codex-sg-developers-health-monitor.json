@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-08-11T00:23:06Z",
-    "last_run_time": "2026-08-11T00:22:03Z",
-    "status": "WARN",
-    "severity": "WARN",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 48182.0,
-    "schema_hash": "83a6d457f6ea564c1dccffb87f8a83237733d9f02a477c6b32b1285354f12ffa",
-    "top_warning": "news.feed_health: google news delta failed for all 12 queries; cached news data remains available"
-  },
-  {
     "captured_at": "2026-08-11T18:29:52Z",
     "last_run_time": "2026-08-11T10:44:59Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 71.0,
     "schema_hash": "d8506e71f0bd16d5e2618c55d2578a87e6751fc00e5c4708291ac8346a9bf352",
+    "top_warning": "None"
+  },
+  {
+    "captured_at": "2026-09-19T19:34:05Z",
+    "last_run_time": "2026-09-19T13:37:38Z",
+    "status": "OK",
+    "severity": "OK",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 62.0,
+    "schema_hash": "1e7ea9f33db6a74389b354317d41be87f2cb4daec33ee0fd16f50039392433cf",
     "top_warning": "None"
   }
 ]
