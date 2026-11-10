@@ -9,11 +9,11 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-11-08T15:29:48Z",
+  "last_run_time": "2026-11-09T15:10:16Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 142188.734397,
-  "freshness_lag_human": "1d 15h",
+  "freshness_lag_seconds": 227416.442534,
+  "freshness_lag_human": "2d 15h",
   "max_date": "2026-11-07",
   "schema_version": "1.0",
   "schema_hash": "6ebd618280238621a1569a0520678acade68b9797aee5646bf756bedc9df6ec9",
@@ -22,10 +22,10 @@
     "regions": 1740,
     "districts": 4742,
     "projects": 13050,
-    "projectTrends": 125034,
+    "projectTrends": 125734,
     "priceCuts": 11820,
-    "duplicates": 4161,
-    "agents": 4939
+    "duplicates": 4204,
+    "agents": 5015
   },
   "key_checks": [
     {
@@ -37,7 +37,7 @@
       "name": "snapshot freshness",
       "status": "OK",
       "detail": "latest snapshot date is 2026-11-07",
-      "metric": 1.65
+      "metric": 2.63
     },
     {
       "name": "market rows",
@@ -60,8 +60,8 @@
     {
       "name": "projectTrends rows",
       "status": "OK",
-      "detail": "125,034 rows exported",
-      "metric": 125034
+      "detail": "125,734 rows exported",
+      "metric": 125734
     },
     {
       "name": "static app assets",
@@ -85,7 +85,7 @@
     "repo": "yt-codex/sg-listing-intelligence-dashboard",
     "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
     "latest_week": "sg-week-2026-11-07",
-    "built_at_utc": "2026-11-08 15:29:36",
+    "built_at_utc": "2026-11-09 15:10:05",
     "source_path": "../propertyguru-sg-weekly-snapshots-prod-20260403-125756/data/state/propertyguru.sqlite"
   },
   "baseline_duration_seconds": null,
@@ -93,5 +93,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-11-08T21:20:24Z"
+  "generated_at": "2026-11-10T00:49:59Z"
 }
