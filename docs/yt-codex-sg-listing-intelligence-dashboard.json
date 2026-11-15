@@ -9,20 +9,20 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "OK",
   "severity": "OK",
-  "last_run_time": "2026-11-14T19:23:09Z",
+  "last_run_time": "2026-11-15T13:39:04Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 69789.300476,
-  "freshness_lag_human": "19h 23m",
+  "freshness_lag_seconds": 135544.53235,
+  "freshness_lag_human": "1d 13h",
   "max_date": "2026-11-14",
   "schema_version": "1.0",
   "schema_hash": "6ebd618280238621a1569a0520678acade68b9797aee5646bf756bedc9df6ec9",
   "row_counts": {
     "market": 180,
     "regions": 1800,
-    "districts": 4903,
+    "districts": 4904,
     "projects": 13500,
-    "projectTrends": 131611,
+    "projectTrends": 132000,
     "priceCuts": 12268,
     "duplicates": 4370,
     "agents": 5223
@@ -37,7 +37,7 @@
       "name": "snapshot freshness",
       "status": "OK",
       "detail": "latest snapshot date is 2026-11-14",
-      "metric": 0.81
+      "metric": 1.57
     },
     {
       "name": "market rows",
@@ -48,8 +48,8 @@
     {
       "name": "districts rows",
       "status": "OK",
-      "detail": "4,903 rows exported",
-      "metric": 4903
+      "detail": "4,904 rows exported",
+      "metric": 4904
     },
     {
       "name": "projects rows",
@@ -60,8 +60,8 @@
     {
       "name": "projectTrends rows",
       "status": "OK",
-      "detail": "131,611 rows exported",
-      "metric": 131611
+      "detail": "132,000 rows exported",
+      "metric": 132000
     },
     {
       "name": "static app assets",
@@ -85,7 +85,7 @@
     "repo": "yt-codex/sg-listing-intelligence-dashboard",
     "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
     "latest_week": "sg-week-2026-11-14",
-    "built_at_utc": "2026-11-14 19:22:57",
+    "built_at_utc": "2026-11-15 13:38:53",
     "source_path": "../propertyguru-sg-weekly-snapshots-prod-20260403-125756/data/state/propertyguru.sqlite"
   },
   "baseline_duration_seconds": null,
@@ -93,5 +93,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-11-14T21:39:43Z"
+  "generated_at": "2026-11-15T22:02:34Z"
 }
