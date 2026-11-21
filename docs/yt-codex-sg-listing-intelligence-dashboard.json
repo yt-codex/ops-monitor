@@ -9,61 +9,61 @@
   "app_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
   "status": "WARN",
   "severity": "WARN",
-  "last_run_time": "2026-11-15T17:43:26Z",
+  "last_run_time": "2026-11-21T20:40:18Z",
   "duration_seconds": null,
   "duration_human": "n/a",
-  "freshness_lag_seconds": 150206.616981,
-  "freshness_lag_human": "1d 17h",
-  "max_date": "2026-11-14",
+  "freshness_lag_seconds": 74418.124179,
+  "freshness_lag_human": "20h 40m",
+  "max_date": "2026-11-21",
   "schema_version": "1.0",
-  "schema_hash": "2f9e030c63f0956691406a49f373620824501dae38253fcd096bf9138646a1d1",
+  "schema_hash": "171012b43f8b28145b90e6a4c59d5b1a88920c816ac11d75caf51e9edf68bb8a",
   "row_counts": {
-    "weeks": 30,
-    "market": 180,
-    "regions": 1800,
-    "districts": 4904,
-    "projects": 4448,
-    "projectTrends": 13518,
-    "priceCuts": 12268,
-    "duplicates": 4370,
-    "agents": 5223,
-    "sourceWeekQuality": 60
+    "weeks": 31,
+    "market": 186,
+    "regions": 1860,
+    "districts": 5067,
+    "projects": 4594,
+    "projectTrends": 14135,
+    "priceCuts": 12718,
+    "duplicates": 4548,
+    "agents": 5440,
+    "sourceWeekQuality": 62
   },
   "key_checks": [
     {
       "name": "latest week manifest",
       "status": "OK",
-      "detail": "latest week is sg-week-2026-11-14"
+      "detail": "latest week is sg-week-2026-11-21"
     },
     {
       "name": "snapshot freshness",
       "status": "OK",
-      "detail": "latest snapshot date is 2026-11-14",
-      "metric": 1.74
+      "detail": "latest snapshot date is 2026-11-21",
+      "metric": 0.86
     },
     {
       "name": "market rows",
       "status": "OK",
-      "detail": "180 rows exported",
-      "metric": 180
+      "detail": "186 rows exported",
+      "metric": 186
     },
     {
       "name": "districts rows",
       "status": "OK",
-      "detail": "4,904 rows exported",
-      "metric": 4904
+      "detail": "5,067 rows exported",
+      "metric": 5067
     },
     {
       "name": "projects rows",
       "status": "OK",
-      "detail": "4,448 rows exported",
-      "metric": 4448
+      "detail": "4,594 rows exported",
+      "metric": 4594
     },
     {
       "name": "projectTrends rows",
       "status": "OK",
-      "detail": "13,518 rows exported",
-      "metric": 13518
+      "detail": "14,135 rows exported",
+      "metric": 14135
     },
     {
       "name": "lazy data shards",
@@ -73,8 +73,8 @@
     {
       "name": "initial payload budget",
       "status": "OK",
-      "detail": "2,271,348 raw bytes; budget 2,500,000",
-      "metric": 2271348
+      "detail": "2,275,249 raw bytes; budget 2,500,000",
+      "metric": 2275249
     },
     {
       "name": "market inference comparability",
@@ -104,8 +104,8 @@
   "meta": {
     "repo": "yt-codex/sg-listing-intelligence-dashboard",
     "dashboard_url": "https://yt-codex.github.io/sg-listing-intelligence-dashboard/",
-    "latest_week": "sg-week-2026-11-14",
-    "built_at_utc": "2026-11-15 17:37:18",
+    "latest_week": "sg-week-2026-11-21",
+    "built_at_utc": "2026-11-21 20:39:36",
     "source_path": null
   },
   "baseline_duration_seconds": null,
@@ -113,5 +113,5 @@
   "detail_page": "yt-codex-sg-listing-intelligence-dashboard.html",
   "detail_url": "https://yt-codex.github.io/ops-monitor/yt-codex-sg-listing-intelligence-dashboard.html",
   "dashboard_home_url": "https://yt-codex.github.io/ops-monitor/",
-  "generated_at": "2026-11-20T23:18:38Z"
+  "generated_at": "2026-11-21T22:19:52Z"
 }

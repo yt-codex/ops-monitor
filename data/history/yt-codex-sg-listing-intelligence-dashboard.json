@@ -1,15 +1,5 @@
 [
   {
-    "captured_at": "2026-06-14T18:53:04Z",
-    "last_run_time": "2026-06-14T17:53:25Z",
-    "status": "OK",
-    "severity": "OK",
-    "duration_seconds": null,
-    "freshness_lag_seconds": 150805.449469,
-    "schema_hash": "c34743a74bddf0e6c1ae90e0590a32ca285d963235867fd6222e1cfd3f06e138",
-    "top_warning": "None"
-  },
-  {
     "captured_at": "2026-06-15T20:37:56Z",
     "last_run_time": "2026-06-15T19:57:49Z",
     "status": "OK",
@@ -397,6 +387,16 @@
     "duration_seconds": null,
     "freshness_lag_seconds": 150206.616981,
     "schema_hash": "2f9e030c63f0956691406a49f373620824501dae38253fcd096bf9138646a1d1",
+    "top_warning": "Operational refresh succeeded, but weekly rate interpretation is restricted by coverage or comparison gaps"
+  },
+  {
+    "captured_at": "2026-11-21T22:19:52Z",
+    "last_run_time": "2026-11-21T20:40:18Z",
+    "status": "WARN",
+    "severity": "WARN",
+    "duration_seconds": null,
+    "freshness_lag_seconds": 74418.124179,
+    "schema_hash": "171012b43f8b28145b90e6a4c59d5b1a88920c816ac11d75caf51e9edf68bb8a",
     "top_warning": "Operational refresh succeeded, but weekly rate interpretation is restricted by coverage or comparison gaps"
   }
 ]
